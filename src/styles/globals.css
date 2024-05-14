@@ -1,0 +1,27 @@
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.controls {
+    width: 20%;
+    padding: 1rem;
+    background: #14161a;
+    color: #fff;
+}
+
+.map {
+    width:100vh;
+    height: 100%;
+}
+
+.map-container {
+    width: 100vh;
+    height: 100%;
+}
