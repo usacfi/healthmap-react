@@ -16,9 +16,9 @@
     color: #fff;
 }
 
-.map {
-    width:100vh;
-    height: 100%;
+.map-field {
+    width:80%;
+    height: 100vh;
 }
 
 .map-container {

@@ -13,21 +13,26 @@ import {Spinner, Alert} from 'react-bootstrap';
 // files
 import '../styles/globals.css';
 import { Circle } from './circle';
+import { AutocompleteSearch } from './autocompleteSearch';
+import MapHandler from './map-handler'
+
 import healthFacilities from '../resources/healthMapJSON.json'
 
-
 export default function HealthMap() {
+	// Initializing the map and the current locaiton of the user
     const [currentLocation, setCurrentLocation] = useState<google.maps.LatLngLiteral | google.maps.LatLng>({ lat: 11.0050, lng: 122.5373 });
     const [mapCenter, setMapCenter] = useState<google.maps.LatLngLiteral>();
     const [loadingState, setLoadingState] = useState(true);
 
-	var radiusNum = 700;
+	var radiusNum = 700;	// Radius = 700 meter radius
 
 	const [radius, setRadius] = React.useState(radiusNum);
 	const [markers, setMarkers] = useState<{ name: string; healthResourceType: string; address: string; latitude: number; longitude: number; }[]>([]);
 
-	const zoomLoad = (loadingState: boolean) => loadingState == true? 6 : 16;
+	// this the zoom of the map. If the map did not load it will automatically zoom out to show the whole region
+	const zoomLoad = (loadingState: boolean) => loadingState === true? 6 : 16;
 
+	// conditionals in changing the color relative to the radius
 	const getFillColor = (radius: number) => radius <= radiusNum ? '#3b82f6' : (radius > radiusNum && radius <= 1400) ? '#ffd55c' : '#f44336';
 	const getStrokeColor = (radius: number) => radius <= radiusNum ? '#0c4cb3' : (radius > radiusNum && radius <= 1400) ? '#4c3f1b' : '#300d0a';
 
@@ -60,8 +65,11 @@ export default function HealthMap() {
 	const [geometryLib] = useState<google.maps.GeometryLibrary['spherical'] | null>(null);
 
 
-	const [infowindowOpen, setInfowindowOpen] = useState(true);
+	const [infowindowOpen, setInfowindowOpen] = useState(false);
   	const [markerRef, markerAnchor] = useAdvancedMarkerRef();
+
+	const [selectedPlace, setSelectedPlace] = useState<google.maps.places.PlaceResult | null>(null);
+
 
 	useEffect(() => {
 		if (!geometryLibrary) return;
@@ -85,63 +93,78 @@ export default function HealthMap() {
 		);
 	};
 
+	// console.log(currentLocation)
+	// console.log(selectedPlace)
+
     return (
 	<div className="container">
-		<Map
-			mapId={"c4c82531f570b1c2"}
-			defaultCenter={mapCenter}
-			defaultZoom={zoomLoad(loadingState)}
-			disableDefaultUI={false}
-          	streetViewControl={true}
-          	mapTypeControl={false}
+		<div className='controls'>
+			<h1>Health Map</h1>
+			<AutocompleteSearch onPlaceSelect={setSelectedPlace} />
 			
-		>
-			<AdvancedMarker
-			position={currentLocation}
-			draggable={true}
-			onDrag={e =>
-				setCurrentLocation({lat: e.latLng?.lat() ?? 0, lng: e.latLng?.lng() ?? 0})
-			}
-        	/>
+		</div>
+			<div className='map-field'>
+			<Map
+				mapId={"c4c82531f570b1c2"}
+				defaultCenter={mapCenter}
+				defaultZoom={zoomLoad(loadingState)}
+				disableDefaultUI={false}
+				streetViewControl={true}
+				mapTypeControl={false}
+				
+			>
+				<AdvancedMarker
+				position={currentLocation}
+				draggable={true}
+				onDrag={e =>
+					setCurrentLocation({lat: e.latLng?.lat() ?? 0, lng: e.latLng?.lng() ?? 0})
+				}
+				/>
 
-			<Circle
-			radius={radiusNum}
-			center={currentLocation}
-			onRadiusChanged={setRadius}
-			onCenterChanged={changeCenter}
-			strokeColor={getStrokeColor(radius)}
-			strokeOpacity={1}
-			strokeWeight={2}
-			fillColor={getFillColor(radius)}
-			fillOpacity={0.3}
-			editable
-			draggable
-        	/>
-			{markers.map((marker, index) => (
-				<>
-					<AdvancedMarker
-						key={index}
-						ref={markerRef}
-						position={{
-						lat: marker.latitude,
-						lng: marker.longitude,
-						}}
-						onClick={() => setInfowindowOpen(true)}
-						title={marker.name}
-					/>
-					{infowindowOpen && (
-						<InfoWindow
-							anchor={markerAnchor}
-							maxWidth={200}
-							onCloseClick={() => setInfowindowOpen(false)}>
-							{marker.name}{' '}
-							{marker.address}{' '}
-							{marker.healthResourceType}
-						</InfoWindow>
-					)}
-				</>
-			))}
-		</Map>
+				<Circle
+				radius={radiusNum}
+				center={currentLocation}
+				onRadiusChanged={setRadius}
+				onCenterChanged={changeCenter}
+				strokeColor={getStrokeColor(radius)}
+				strokeOpacity={1}
+				strokeWeight={2}
+				fillColor={getFillColor(radius)}
+				fillOpacity={0.3}
+				editable
+				draggable
+				/>
+				{selectedPlace && <AdvancedMarker position={selectedPlace.geometry?.location}/>}
+
+				{markers.map((marker, index) => (
+					<>
+						<AdvancedMarker
+							key={index}
+							ref={markerRef}
+							position={{
+							lat: marker.latitude,
+							lng: marker.longitude,
+							}}
+							
+							onClick={() => setInfowindowOpen(true)}
+							title={marker.name}
+						/>
+						
+						{infowindowOpen && (
+							<InfoWindow
+								anchor={markerAnchor}
+								maxWidth={200}
+								onCloseClick={() => setInfowindowOpen(false)}>
+								{marker.name}{' '}
+								{marker.address}{' '}
+								{marker.healthResourceType}
+							</InfoWindow>
+						)}
+					</>
+				))}
+			</Map>
+			<MapHandler place={selectedPlace} />
+		</div>
 	</div>
     );
   }
