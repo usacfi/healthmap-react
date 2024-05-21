@@ -4,7 +4,9 @@ import {
 	AdvancedMarker,
 	Pin,
 	Marker,
+	CollisionBehavior,
 	InfoWindow,
+	useMap,
 	useMapsLibrary,
 	useAdvancedMarkerRef,
 } from '@vis.gl/react-google-maps';
@@ -15,6 +17,7 @@ import '../styles/globals.css';
 import { Circle } from './circle';
 import { AutocompleteSearch } from './autocompleteSearch';
 import MapHandler from './map-handler'
+import Directions from './directions';
 
 import healthFacilities from '../resources/healthMapJSON.json'
 
@@ -93,8 +96,7 @@ export default function HealthMap() {
 		);
 	};
 
-	// console.log(currentLocation)
-	// console.log(selectedPlace)
+	const destinationLocation = selectedPlace?.geometry?.location
 
     return (
 	<div className="container">
@@ -119,7 +121,21 @@ export default function HealthMap() {
 				onDrag={e =>
 					setCurrentLocation({lat: e.latLng?.lat() ?? 0, lng: e.latLng?.lng() ?? 0})
 				}
-				/>
+				>
+					<div
+					style={{
+					width: 16,
+					height: 16,
+					position: 'absolute',
+					top: 0,
+					left: 0,
+					background: '#3b82f6',
+					border: '2px solid #0c4cb3',
+					borderRadius: '50%',
+					transform: 'translate(-50%, -50%)'
+					}}>	
+					</div>
+				</AdvancedMarker>
 
 				<Circle
 				radius={radiusNum}
@@ -135,7 +151,7 @@ export default function HealthMap() {
 				draggable
 				/>
 				{selectedPlace && <AdvancedMarker position={selectedPlace.geometry?.location}/>}
-
+				
 				{markers.map((marker, index) => (
 					<>
 						<AdvancedMarker
@@ -145,7 +161,7 @@ export default function HealthMap() {
 							lat: marker.latitude,
 							lng: marker.longitude,
 							}}
-							
+							collisionBehavior={CollisionBehavior.REQUIRED_AND_HIDES_OPTIONAL}
 							onClick={() => setInfowindowOpen(true)}
 							title={marker.name}
 						/>
@@ -162,6 +178,7 @@ export default function HealthMap() {
 						)}
 					</>
 				))}
+				<Directions currentLocation={currentLocation} selectedPlace={destinationLocation}/>
 			</Map>
 			<MapHandler place={selectedPlace} />
 		</div>

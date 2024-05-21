@@ -3,7 +3,6 @@ import {useMap, useMapsLibrary} from '@vis.gl/react-google-maps';
 import Combobox from 'react-widgets/Combobox';
 
 import 'react-widgets/styles.css';
-import { Circle } from './circle';
 
 interface Props {
   onPlaceSelect: (place: google.maps.places.PlaceResult | null) => void;
@@ -105,23 +104,21 @@ export const AutocompleteSearch = ({onPlaceSelect}: Props) => {
   );
 
   return (
-    <div className="autocomplete-container">
-      <Combobox
-        placeholder="Find a health facility..."
-        data={predictionResults}
-        dataKey="place_id"
-        textField="description"
-        value={inputValue}
-        onChange={onInputChange}
-        onSelect={onSelect}
-        busy={fetchingData}
-        // Since the Autocomplete Service API already returns filtered results
-        // always want to display them all.
-        filter={() => true}
-        focusFirstItem={true}
-        hideEmptyPopup
-        hideCaret
-      />
-    </div>
+    <Combobox
+    placeholder="Find a health facility..."
+    data={predictionResults}
+    dataKey="place_id"
+    textField="description"
+    value={inputValue}
+    onChange={onInputChange}
+    onSelect={onSelect}
+    busy={fetchingData}
+    // Since the Autocomplete Service API already returns filtered results
+    // always want to display them all.
+    filter={() => true}
+    focusFirstItem={true}
+    hideEmptyPopup
+    hideCaret
+    />
   );
 };
