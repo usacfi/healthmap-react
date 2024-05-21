@@ -12,20 +12,27 @@ import {
 } from '@vis.gl/react-google-maps';
 import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import {Spinner, Alert} from 'react-bootstrap';
+
 // files
 import '../styles/globals.css';
+
+// components
 import { Circle } from './circle';
 import { AutocompleteSearch } from './autocompleteSearch';
 import MapHandler from './map-handler'
 import Directions from './directions';
+import { Community, communityData } from '../resources/communityData';
 
+// data
 import healthFacilities from '../resources/healthMapJSON.json'
+//import community from '../resources/communities.json'
 
 export default function HealthMap() {
 	// Initializing the map and the current locaiton of the user
     const [currentLocation, setCurrentLocation] = useState<google.maps.LatLngLiteral | google.maps.LatLng>({ lat: 11.0050, lng: 122.5373 });
     const [mapCenter, setMapCenter] = useState<google.maps.LatLngLiteral>();
     const [loadingState, setLoadingState] = useState(true);
+	const [userLocation, setUserLocation] = useState<google.maps.LatLngLiteral | google.maps.LatLng>()
 
 	var radiusNum = 700;	// Radius = 700 meter radius
 
@@ -49,6 +56,7 @@ export default function HealthMap() {
         (position) => {
             setMapCenter({ lat: position.coords.latitude, lng: position.coords.longitude});
             setCurrentLocation({ lat: position.coords.latitude, lng: position.coords.longitude})
+			setUserLocation ({ lat: position.coords.latitude, lng: position.coords.longitude})
             setLoadingState(false);
         },
         () => {
@@ -67,12 +75,10 @@ export default function HealthMap() {
 	const geometryLibrary = useMapsLibrary("geometry");
 	const [geometryLib] = useState<google.maps.GeometryLibrary['spherical'] | null>(null);
 
-
 	const [infowindowOpen, setInfowindowOpen] = useState(false);
   	const [markerRef, markerAnchor] = useAdvancedMarkerRef();
 
 	const [selectedPlace, setSelectedPlace] = useState<google.maps.places.PlaceResult | null>(null);
-
 
 	useEffect(() => {
 		if (!geometryLibrary) return;
@@ -86,8 +92,20 @@ export default function HealthMap() {
 		});
 		setMarkers(markersWithinRadius);
 	  }, [geometryLib, currentLocation, radius]);
-		
 
+	const [selectedCommunity, setSelectedCommunity] = useState<Community | null>(null);
+
+	const handleCommunitySelect = (community: Community) => {
+		setSelectedCommunity(community);
+	  };
+	
+	useEffect(() => {
+		if (selectedCommunity) {
+		  setCurrentLocation({ lat: selectedCommunity.latitude, lng: selectedCommunity.longitude });
+		  setMapCenter({ lat: selectedCommunity.latitude, lng: selectedCommunity.longitude });
+		}
+	}, [selectedCommunity]);
+	
 	if (loadingState === true) {
 		return (
 			<div className="center">
@@ -103,12 +121,22 @@ export default function HealthMap() {
 		<div className='controls'>
 			<h1>Health Map</h1>
 			<AutocompleteSearch onPlaceSelect={setSelectedPlace} />
+			<h3>Communities</h3>
+			<div className='community-panel'>
+				<div  className='button-stack'>
+					{communityData.map((community, index) => (
+						<button className='button-communities' key={index} onClick={() => handleCommunitySelect(community)}>
+						{community.name}
+						</button>
+					))}
+				</div>
+			</div>
 			
 		</div>
 			<div className='map-field'>
 			<Map
 				mapId={"c4c82531f570b1c2"}
-				defaultCenter={mapCenter}
+				defaultCenter={selectedCommunity ? {lat: selectedCommunity.latitude, lng: selectedCommunity.longitude} : mapCenter}
 				defaultZoom={zoomLoad(loadingState)}
 				disableDefaultUI={false}
 				streetViewControl={true}
