@@ -114,13 +114,14 @@ export default function HealthMap() {
 		);
 	};
 
-	const destinationLocation = selectedPlace?.geometry?.location
 
+	const destinationLocation = selectedPlace?.geometry?.location;
+		
     return (
 	<div className="container">
 		<div className='controls'>
 			<h1>Health Map</h1>
-			<AutocompleteSearch onPlaceSelect={setSelectedPlace} />
+			<AutocompleteSearch onPlaceSelect={setSelectedPlace} selectedPlace={destinationLocation} />
 			<h3>Communities</h3>
 			<div className='community-panel'>
 				<div  className='button-stack'>
@@ -178,8 +179,7 @@ export default function HealthMap() {
 				editable
 				draggable
 				/>
-				{selectedPlace && <AdvancedMarker position={selectedPlace.geometry?.location}/>}
-				
+								
 				{markers.map((marker, index) => (
 					<>
 						<AdvancedMarker

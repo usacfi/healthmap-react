@@ -1,15 +1,16 @@
-import React, {useEffect, useState, useCallback} from 'react';
-import {useMap, useMapsLibrary} from '@vis.gl/react-google-maps';
+import {useEffect, useState, useCallback} from 'react';
+import {useMap, useMapsLibrary, AdvancedMarker} from '@vis.gl/react-google-maps';
 import Combobox from 'react-widgets/Combobox';
 
 import 'react-widgets/styles.css';
 
 interface Props {
   onPlaceSelect: (place: google.maps.places.PlaceResult | null) => void;
+  selectedPlace: google.maps.LatLng | undefined
 }
 
 // This uses the Combobox from "react-widgets" (https://jquense.github.io/react-widgets/docs/Combobox)
-export const AutocompleteSearch = ({onPlaceSelect}: Props) => {
+export const AutocompleteSearch = ({onPlaceSelect, selectedPlace}: Props) => {
   const map = useMap();
   const places = useMapsLibrary('places');
 
@@ -51,7 +52,7 @@ export const AutocompleteSearch = ({onPlaceSelect}: Props) => {
 
       setFetchingData(true);
 
-      // Add the location bias for Western Visayas, Philippines
+      // Location bias for Western Visayas, Philippines
       const latitude = 11.0050; // Latitude of Iloilo City, Philippines
       const longitude = 122.5373; // Longitude of Iloilo City, Philippines
       const location = new google.maps.LatLng(latitude, longitude);
@@ -80,8 +81,6 @@ export const AutocompleteSearch = ({onPlaceSelect}: Props) => {
     (prediction: google.maps.places.AutocompletePrediction | string) => {
       if (!places || typeof prediction === 'string') return;
 
-      setFetchingData(true);
-
       const detailRequestOptions = {
         placeId: prediction.place_id,
         fields: ['geometry', 'name', 'formatted_address'],
@@ -92,9 +91,8 @@ export const AutocompleteSearch = ({onPlaceSelect}: Props) => {
         placeDetails: google.maps.places.PlaceResult | null
       ) => {
         onPlaceSelect(placeDetails);
-        setInputValue(placeDetails?.formatted_address ?? '');
+        setInputValue(placeDetails?.name ?? '');
         setSessionToken(new places.AutocompleteSessionToken());
-
         setFetchingData(false);
       };
 
@@ -104,21 +102,25 @@ export const AutocompleteSearch = ({onPlaceSelect}: Props) => {
   );
 
   return (
-    <Combobox
-    placeholder="Find a health facility..."
-    data={predictionResults}
-    dataKey="place_id"
-    textField="description"
-    value={inputValue}
-    onChange={onInputChange}
-    onSelect={onSelect}
-    busy={fetchingData}
-    // Since the Autocomplete Service API already returns filtered results
-    // always want to display them all.
-    filter={() => true}
-    focusFirstItem={true}
-    hideEmptyPopup
-    hideCaret
-    />
+	<>
+		<Combobox
+		placeholder="Find a health facility..."
+		data={predictionResults}
+		dataKey="place_id"
+		textField="description"
+		value={inputValue}
+		onChange={onInputChange}
+		onSelect={onSelect}
+		busy={fetchingData}
+		// Since the Autocomplete Service API already returns filtered results
+		// always want to display them all.
+		filter={() => true}
+		focusFirstItem={true}
+		hideEmptyPopup
+		hideCaret
+		/>
+
+		{inputValue && <AdvancedMarker position={selectedPlace} />}
+	</>
   );
 };
