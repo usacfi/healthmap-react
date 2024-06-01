@@ -114,9 +114,8 @@ export default function HealthMap() {
 		);
 	};
 
-
 	const destinationLocation = selectedPlace?.geometry?.location;
-		
+				
     return (
 	<div className="container">
 		<div className='controls'>
@@ -151,18 +150,17 @@ export default function HealthMap() {
 					setCurrentLocation({lat: e.latLng?.lat() ?? 0, lng: e.latLng?.lng() ?? 0})
 				}
 				>
-					<div
-					style={{
-					width: 16,
-					height: 16,
-					position: 'absolute',
-					top: 0,
-					left: 0,
-					background: '#3b82f6',
-					border: '2px solid #0c4cb3',
-					borderRadius: '50%',
-					transform: 'translate(-50%, -50%)'
-					}}>	
+					<div style={{
+						width: 16,
+						height: 16,
+						position: 'absolute',
+						top: 0,
+						left: 0,
+						background: '#3b82f6',
+						border: '2px solid #0c4cb3',
+						borderRadius: '50%',
+						transform: 'translate(-50%, -50%)'
+						}}>	
 					</div>
 				</AdvancedMarker>
 

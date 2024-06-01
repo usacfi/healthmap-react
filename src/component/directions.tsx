@@ -4,7 +4,7 @@ import {
 } from '@vis.gl/react-google-maps';
 import { useState, useEffect } from "react";
   
-type Props = {
+interface Props {
     currentLocation: google.maps.LatLngLiteral | google.maps.LatLng | google.maps.Place;
     selectedPlace: google.maps.LatLng | undefined;
 };
