@@ -12,6 +12,8 @@ import {
 } from '@vis.gl/react-google-maps';
 import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import {Spinner, Alert} from 'react-bootstrap';
+import DropdownList from "react-widgets/DropdownList";
+
 
 // files
 import '../styles/globals.css';
@@ -25,7 +27,7 @@ import { Community, communityData } from '../resources/communityData';
 
 // data
 import healthFacilities from '../resources/healthMapJSON.json'
-//import community from '../resources/communities.json'
+import healthFacilitiesType from '../resources/grouped_data.json'
 
 export default function HealthMap() {
 	// Initializing the map and the current locaiton of the user
@@ -35,7 +37,6 @@ export default function HealthMap() {
 	const [userLocation, setUserLocation] = useState<google.maps.LatLngLiteral | google.maps.LatLng>()
 
 	var radiusNum = 700;	// Radius = 700 meter radius
-
 	const [radius, setRadius] = React.useState(radiusNum);
 	const [markers, setMarkers] = useState<{ name: string; healthResourceType: string; address: string; latitude: number; longitude: number; }[]>([]);
 
@@ -45,7 +46,7 @@ export default function HealthMap() {
 	// conditionals in changing the color relative to the radius
 	const getFillColor = (radius: number) => radius <= radiusNum ? '#3b82f6' : (radius > radiusNum && radius <= 1400) ? '#ffd55c' : '#f44336';
 	const getStrokeColor = (radius: number) => radius <= radiusNum ? '#0c4cb3' : (radius > radiusNum && radius <= 1400) ? '#4c3f1b' : '#300d0a';
-
+	
 	const changeCenter = (newCenter: google.maps.LatLng | null) => {
 		if (!newCenter) return;
 		setCurrentLocation({lng: newCenter.lng(), lat: newCenter.lat()});
@@ -79,6 +80,7 @@ export default function HealthMap() {
   	const [markerRef, markerAnchor] = useAdvancedMarkerRef();
 
 	const [selectedPlace, setSelectedPlace] = useState<google.maps.places.PlaceResult | null>(null);
+	const destinationLocation = selectedPlace?.geometry?.location;
 
 	useEffect(() => {
 		if (!geometryLibrary) return;
@@ -105,6 +107,21 @@ export default function HealthMap() {
 		  setMapCenter({ lat: selectedCommunity.latitude, lng: selectedCommunity.longitude });
 		}
 	}, [selectedCommunity]);
+
+	const [selectedHealthResourceType, setSelectedHealthResourceType] = useState('All');
+	const healthResourceTypes = Object.keys(healthFacilitiesType[0]);
+
+	const handleHealthResourceTypeChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+		setSelectedHealthResourceType(event.target.value);
+	};
+
+	const filteredMarkers = useMemo(() => {
+		if (selectedHealthResourceType === 'All') {
+		return markers;
+		} else {
+		return markers.filter((marker) => marker.healthResourceType === selectedHealthResourceType);
+		}
+	}, [markers, selectedHealthResourceType]);
 	
 	if (loadingState === true) {
 		return (
@@ -114,13 +131,22 @@ export default function HealthMap() {
 		);
 	};
 
-	const destinationLocation = selectedPlace?.geometry?.location;
-				
     return (
 	<div className="container">
 		<div className='controls'>
 			<h1>Health Map</h1>
 			<AutocompleteSearch onPlaceSelect={setSelectedPlace} selectedPlace={destinationLocation} />
+
+			<h3>Health Facilities</h3>
+			<select className='dropdown-facilities' value={selectedHealthResourceType} onChange={handleHealthResourceTypeChange}>
+				<option value="All">All Health Facilities</option>
+				{healthResourceTypes.map((type) => (
+					<option key={type} value={type}>
+					{type}
+					</option>
+				))}
+			</select>
+
 			<h3>Communities</h3>
 			<div className='community-panel'>
 				<div  className='button-stack'>
@@ -131,7 +157,6 @@ export default function HealthMap() {
 					))}
 				</div>
 			</div>
-			
 		</div>
 			<div className='map-field'>
 			<Map
@@ -177,22 +202,21 @@ export default function HealthMap() {
 				editable
 				draggable
 				/>
-								
-				{markers.map((marker, index) => (
+				{filteredMarkers.map((marker, index) => (
 					<>
 						<AdvancedMarker
-							key={index}
-							ref={markerRef}
-							position={{
+						key={index}
+						ref={markerRef}
+						position={{
 							lat: marker.latitude,
 							lng: marker.longitude,
-							}}
-							collisionBehavior={CollisionBehavior.REQUIRED_AND_HIDES_OPTIONAL}
-							onClick={() => setInfowindowOpen(true)}
-							title={marker.name}
+						}}
+						collisionBehavior={CollisionBehavior.REQUIRED_AND_HIDES_OPTIONAL}
+						onClick={() => setInfowindowOpen(true)}
+						title={marker.name}
 						/>
-						
-						{infowindowOpen && (
+
+						{/* {infowindowOpen && (
 							<InfoWindow
 								anchor={markerAnchor}
 								maxWidth={200}
@@ -201,7 +225,7 @@ export default function HealthMap() {
 								{marker.address}{' '}
 								{marker.healthResourceType}
 							</InfoWindow>
-						)}
+						)} */}
 					</>
 				))}
 				<Directions currentLocation={currentLocation} selectedPlace={destinationLocation}/>
