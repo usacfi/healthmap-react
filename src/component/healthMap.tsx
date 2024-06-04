@@ -2,18 +2,14 @@ import React from 'react';
 import { 
 	Map,
 	AdvancedMarker,
-	Pin,
-	Marker,
 	CollisionBehavior,
 	InfoWindow,
-	useMap,
 	useMapsLibrary,
 	useAdvancedMarkerRef,
 } from '@vis.gl/react-google-maps';
 import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import {Spinner, Alert} from 'react-bootstrap';
 import DropdownList from "react-widgets/DropdownList";
-
 
 // files
 import '../styles/globals.css';
@@ -76,9 +72,20 @@ export default function HealthMap() {
 	const geometryLibrary = useMapsLibrary("geometry");
 	const [geometryLib] = useState<google.maps.GeometryLibrary['spherical'] | null>(null);
 
+	// info window
 	const [infowindowOpen, setInfowindowOpen] = useState(false);
   	const [markerRef, markerAnchor] = useAdvancedMarkerRef();
 
+	// clicking the marker will toggle the infowindow
+	const handleMarkerClick = useCallback(
+		() => setInfowindowOpen(isShown => !isShown),
+		[]
+	  );
+	
+	const handleClose = useCallback(() => setInfowindowOpen(false), []);
+
+
+	// autocomplete
 	const [selectedPlace, setSelectedPlace] = useState<google.maps.places.PlaceResult | null>(null);
 	const destinationLocation = selectedPlace?.geometry?.location;
 
@@ -160,7 +167,7 @@ export default function HealthMap() {
 		</div>
 			<div className='map-field'>
 			<Map
-				mapId={"c4c82531f570b1c2"}
+				mapId={process.env.REACT_APP_GOOGLE_MAPS_ID}
 				defaultCenter={selectedCommunity ? {lat: selectedCommunity.latitude, lng: selectedCommunity.longitude} : mapCenter}
 				defaultZoom={zoomLoad(loadingState)}
 				disableDefaultUI={false}
@@ -212,20 +219,21 @@ export default function HealthMap() {
 							lng: marker.longitude,
 						}}
 						collisionBehavior={CollisionBehavior.REQUIRED_AND_HIDES_OPTIONAL}
-						onClick={() => setInfowindowOpen(true)}
+						onClick={handleMarkerClick}
 						title={marker.name}
 						/>
 
-						{/* {infowindowOpen && (
+						{infowindowOpen && (
 							<InfoWindow
-								anchor={markerAnchor}
-								maxWidth={200}
-								onCloseClick={() => setInfowindowOpen(false)}>
-								{marker.name}{' '}
-								{marker.address}{' '}
-								{marker.healthResourceType}
+								position={{lat: marker.latitude, lng: marker.longitude}}
+								maxWidth={500}
+								onCloseClick={handleClose}>
+								<h4>{marker.name}</h4>
+								<p>{marker.address}</p>
+								<p>{marker.healthResourceType}</p>
+								
 							</InfoWindow>
-						)} */}
+						)} 
 					</>
 				))}
 				<Directions currentLocation={currentLocation} selectedPlace={destinationLocation}/>
