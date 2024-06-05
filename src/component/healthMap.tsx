@@ -74,16 +74,25 @@ export default function HealthMap() {
 
 	// info window
 	const [infowindowOpen, setInfowindowOpen] = useState(false);
+	const [selectedMarker, setSelectedMarker] = useState<{
+		name: string;
+		healthResourceType: string;
+		address: string;
+		latitude: number;
+		longitude: number;
+	  } | null>(null);
   	const [markerRef, markerAnchor] = useAdvancedMarkerRef();
 
-	// clicking the marker will toggle the infowindow
-	const handleMarkerClick = useCallback(
-		() => setInfowindowOpen(isShown => !isShown),
-		[]
-	  );
-	
-	const handleClose = useCallback(() => setInfowindowOpen(false), []);
+	const filteredMarkersInfo = Object.values(healthFacilitiesType[0]).flat()
 
+	const handleMarkerClick = (marker: {name: string, healthResourceType: string, address: string, latitude: number, longitude: number}) => {
+		setInfowindowOpen(true);
+		setSelectedMarker(marker);
+	};
+	
+	const handleClose = () => {
+		setInfowindowOpen(false);
+	};
 
 	// autocomplete
 	const [selectedPlace, setSelectedPlace] = useState<google.maps.places.PlaceResult | null>(null);
@@ -219,19 +228,21 @@ export default function HealthMap() {
 							lng: marker.longitude,
 						}}
 						collisionBehavior={CollisionBehavior.REQUIRED_AND_HIDES_OPTIONAL}
-						onClick={handleMarkerClick}
+						onClick={() => handleMarkerClick(marker)}
 						title={marker.name}
 						/>
 
-						{infowindowOpen && (
+						{infowindowOpen && selectedMarker === marker && (
 							<InfoWindow
 								position={{lat: marker.latitude, lng: marker.longitude}}
 								maxWidth={500}
 								onCloseClick={handleClose}>
-								<h4>{marker.name}</h4>
-								<p>{marker.address}</p>
+								<h3>{marker.name}</h3>
+								<i>{marker.address}</i>
 								<p>{marker.healthResourceType}</p>
-								
+								<p>Operation Hours: </p>
+								<p>Contact Details: </p>
+								<p>Services Offered: </p>
 							</InfoWindow>
 						)} 
 					</>

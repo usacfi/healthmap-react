@@ -1,5 +1,5 @@
-import {useMap, AdvancedMarker} from '@vis.gl/react-google-maps';
-import React, {useEffect, useState} from 'react';
+import {useMap} from '@vis.gl/react-google-maps';
+import React, {useEffect} from 'react';
 
 interface Props {
   place: google.maps.places.PlaceResult | null;
