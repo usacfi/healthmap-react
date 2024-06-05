@@ -22,8 +22,9 @@ import Directions from './directions';
 import { Community, communityData } from '../resources/communityData';
 
 // data
-import healthFacilities from '../resources/healthMapJSON.json'
+//import healthFacilities from '../resources/healthMapJSON.json'
 import healthFacilitiesType from '../resources/grouped_data.json'
+const healthFacilities = Object.values(healthFacilitiesType[0]).flat()
 
 export default function HealthMap() {
 	// Initializing the map and the current locaiton of the user
@@ -33,11 +34,11 @@ export default function HealthMap() {
 	const [userLocation, setUserLocation] = useState<google.maps.LatLngLiteral | google.maps.LatLng>()
 
 	var radiusNum = 700;	// Radius = 700 meter radius
-	const [radius, setRadius] = React.useState(radiusNum);
-	const [markers, setMarkers] = useState<{ name: string; healthResourceType: string; address: string; latitude: number; longitude: number; }[]>([]);
+	const [radius, setRadius] = useState(radiusNum);
+	const [markers, setMarkers] = useState<{ name: string; healthResourceType: string; address: string; latitude: number; longitude: number}[]>([])
 
 	// this the zoom of the map. If the map did not load it will automatically zoom out to show the whole region
-	const zoomLoad = (loadingState: boolean) => loadingState === true? 6 : 16;
+	const zoomLoad = (currentLocation: google.maps.LatLng | google.maps.LatLngLiteral) => currentLocation.lat === 11.0050 && currentLocation.lng === 122.5373 ? 9 : 16;
 
 	// conditionals in changing the color relative to the radius
 	const getFillColor = (radius: number) => radius <= radiusNum ? '#3b82f6' : (radius > radiusNum && radius <= 1400) ? '#ffd55c' : '#f44336';
@@ -64,13 +65,26 @@ export default function HealthMap() {
 		setLoadingState(false);
         });
       };
+
+	const geometryLibrary = useMapsLibrary("geometry");
+	const [geometryLib] = useState<google.maps.GeometryLibrary['spherical'] | null>(null);
+
+	useEffect(() => {
+		if (!geometryLibrary) return;
+		const markersWithinRadius = healthFacilities.filter((resource) => {
+			const distance = geometryLibrary?.spherical.computeDistanceBetween(
+				new google.maps.LatLng(currentLocation),
+				new google.maps.LatLng(resource.latitude, resource.longitude)
+			)
+			;
+		return distance <= radius;
+		});
+		setMarkers(markersWithinRadius);
+	}, [geometryLib, currentLocation, radius]);
 		
 	useEffect(() => {
 		getCurrentLocation()
 	}, []);
-
-	const geometryLibrary = useMapsLibrary("geometry");
-	const [geometryLib] = useState<google.maps.GeometryLibrary['spherical'] | null>(null);
 
 	// info window
 	const [infowindowOpen, setInfowindowOpen] = useState(false);
@@ -82,8 +96,6 @@ export default function HealthMap() {
 		longitude: number;
 	  } | null>(null);
   	const [markerRef, markerAnchor] = useAdvancedMarkerRef();
-
-	const filteredMarkersInfo = Object.values(healthFacilitiesType[0]).flat()
 
 	const handleMarkerClick = (marker: {name: string, healthResourceType: string, address: string, latitude: number, longitude: number}) => {
 		setInfowindowOpen(true);
@@ -97,19 +109,6 @@ export default function HealthMap() {
 	// autocomplete
 	const [selectedPlace, setSelectedPlace] = useState<google.maps.places.PlaceResult | null>(null);
 	const destinationLocation = selectedPlace?.geometry?.location;
-
-	useEffect(() => {
-		if (!geometryLibrary) return;
-		const markersWithinRadius = healthFacilities.filter((resource) => {
-			const distance = geometryLibrary?.spherical.computeDistanceBetween(
-				new google.maps.LatLng(currentLocation),
-				new google.maps.LatLng(resource.latitude, resource.longitude)
-			  )
-			;
-		  return distance <= radius;
-		});
-		setMarkers(markersWithinRadius);
-	  }, [geometryLib, currentLocation, radius]);
 
 	const [selectedCommunity, setSelectedCommunity] = useState<Community | null>(null);
 
@@ -178,7 +177,7 @@ export default function HealthMap() {
 			<Map
 				mapId={process.env.REACT_APP_GOOGLE_MAPS_ID}
 				defaultCenter={selectedCommunity ? {lat: selectedCommunity.latitude, lng: selectedCommunity.longitude} : mapCenter}
-				defaultZoom={zoomLoad(loadingState)}
+				defaultZoom={zoomLoad(currentLocation)}
 				disableDefaultUI={false}
 				streetViewControl={true}
 				mapTypeControl={false}
