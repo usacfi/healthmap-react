@@ -1,14 +1,14 @@
 export {}
 
 export interface Community {
-    name: string;
+    name: string ;
     address: string;
     latitude: number;
     longitude: number;
   }
   
 export const communityData: Community[] = [
-    {
+    {   
         "name":"Migrants Community",
         "address":"Barbaza, Antique", 
         "latitude": 11.2231318,

@@ -6,10 +6,10 @@ import {
 	InfoWindow,
 	useMapsLibrary,
 	useAdvancedMarkerRef,
+	useMap,
 } from '@vis.gl/react-google-maps';
-import { useState, useMemo, useCallback, useRef, useEffect } from "react";
-import {Spinner, Alert} from 'react-bootstrap';
-import DropdownList from "react-widgets/DropdownList";
+import { useState, useMemo, useEffect } from "react";
+import {Spinner, Alert, Dropdown, DropdownButton} from 'react-bootstrap';
 
 // files
 import '../styles/globals.css';
@@ -22,8 +22,8 @@ import Directions from './directions';
 import { Community, communityData } from '../resources/communityData';
 
 // data
-//import healthFacilities from '../resources/healthMapJSON.json'
 import healthFacilitiesType from '../resources/grouped_data.json'
+import DropdownList from 'react-widgets/DropdownList';
 const healthFacilities = Object.values(healthFacilitiesType[0]).flat()
 
 export default function HealthMap() {
@@ -31,7 +31,7 @@ export default function HealthMap() {
     const [currentLocation, setCurrentLocation] = useState<google.maps.LatLngLiteral | google.maps.LatLng>({ lat: 11.0050, lng: 122.5373 });
     const [mapCenter, setMapCenter] = useState<google.maps.LatLngLiteral>();
     const [loadingState, setLoadingState] = useState(true);
-	const [userLocation, setUserLocation] = useState<google.maps.LatLngLiteral | google.maps.LatLng>()
+	const [userLocation, setUserLocation] = useState<google.maps.LatLngLiteral | google.maps.LatLng>({ lat: 11.0050, lng: 122.5373 })
 
 	var radiusNum = 700;	// Radius = 700 meter radius
 	const [radius, setRadius] = useState(radiusNum);
@@ -43,9 +43,12 @@ export default function HealthMap() {
 	// conditionals in changing the color relative to the radius
 	const getFillColor = (radius: number) => radius <= radiusNum ? '#3b82f6' : (radius > radiusNum && radius <= 1400) ? '#ffd55c' : '#f44336';
 	const getStrokeColor = (radius: number) => radius <= radiusNum ? '#0c4cb3' : (radius > radiusNum && radius <= 1400) ? '#4c3f1b' : '#300d0a';
-	
+
+	const map = useMap()
+
 	const changeCenter = (newCenter: google.maps.LatLng | null) => {
 		if (!newCenter) return;
+		setMapCenter({ lat: newCenter.lat(), lng: newCenter.lng() });
 		setCurrentLocation({lng: newCenter.lng(), lat: newCenter.lat()});
 	};
 
@@ -68,7 +71,8 @@ export default function HealthMap() {
 
 	const geometryLibrary = useMapsLibrary("geometry");
 	const [geometryLib] = useState<google.maps.GeometryLibrary['spherical'] | null>(null);
-
+	
+	// Markers within the access radius
 	useEffect(() => {
 		if (!geometryLibrary) return;
 		const markersWithinRadius = healthFacilities.filter((resource) => {
@@ -114,12 +118,16 @@ export default function HealthMap() {
 
 	const handleCommunitySelect = (community: Community) => {
 		setSelectedCommunity(community);
+		if (map) {
+			map.panTo({ lat: community.latitude, lng: community.longitude });
+			map.setZoom(15)
+		}
 	  };
-	
+
 	useEffect(() => {
 		if (selectedCommunity) {
-		  setCurrentLocation({ lat: selectedCommunity.latitude, lng: selectedCommunity.longitude });
-		  setMapCenter({ lat: selectedCommunity.latitude, lng: selectedCommunity.longitude });
+		  	setCurrentLocation({ lat: selectedCommunity.latitude, lng: selectedCommunity.longitude });
+		  	setMapCenter({ lat: selectedCommunity.latitude, lng: selectedCommunity.longitude });
 		}
 	}, [selectedCommunity]);
 
@@ -137,7 +145,9 @@ export default function HealthMap() {
 		return markers.filter((marker) => marker.healthResourceType === selectedHealthResourceType);
 		}
 	}, [markers, selectedHealthResourceType]);
-	
+
+	const healthResourceTypesOptions = healthResourceTypes.map((type) => ({ name: type }));
+
 	if (loadingState === true) {
 		return (
 			<div className="center">
@@ -149,10 +159,18 @@ export default function HealthMap() {
     return (
 	<div className="container">
 		<div className='controls'>
-			<h1>Health Map</h1>
-			<AutocompleteSearch onPlaceSelect={setSelectedPlace} selectedPlace={destinationLocation} />
+			<center>
+				<h1>Health Map</h1>
+			</center>
 
-			<h3>Health Facilities</h3>
+			<h3>Search Facilities</h3>			
+			{map && (
+				<AutocompleteSearch onPlaceSelect={setSelectedPlace} selectedPlace={destinationLocation} currentLocation={currentLocation}/>)}
+	
+			{map && selectedPlace && (
+				<Directions currentLocation={currentLocation} selectedPlace={destinationLocation} map={map} />)}
+
+			<h3>Health Facilities Type</h3>
 			<select className='dropdown-facilities' value={selectedHealthResourceType} onChange={handleHealthResourceTypeChange}>
 				<option value="All">All Health Facilities</option>
 				{healthResourceTypes.map((type) => (
@@ -161,27 +179,48 @@ export default function HealthMap() {
 					</option>
 				))}
 			</select>
-
-			<h3>Communities</h3>
+			
+			<div>
+				<h3 className='inline-element'>Communities</h3>
+				<button className='button-location' onClick={() => {
+					if (map) {
+					setCurrentLocation(userLocation)
+					map.panTo(currentLocation);
+					map.setZoom(16);
+					}
+				}}>
+					{/* <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+						<circle cx="12" cy="10" r="3" />
+					</svg> */}
+					📍
+				</button> 
+			</div>
 			<div className='community-panel'>
-				<div  className='button-stack'>
+				<DropdownList 
+					data={communityData} 
+					dataKey='name' 
+					textField='name' 
+					placeholder='Select Community'
+					onSelect={(community) => handleCommunitySelect(community)}
+				/>
+				{/* <div  className='button-stack'>
 					{communityData.map((community, index) => (
 						<button className='button-communities' key={index} onClick={() => handleCommunitySelect(community)}>
 						{community.name}
 						</button>
 					))}
-				</div>
+				</div> */}
 			</div>
 		</div>
 			<div className='map-field'>
 			<Map
 				mapId={process.env.REACT_APP_GOOGLE_MAPS_ID}
-				defaultCenter={selectedCommunity ? {lat: selectedCommunity.latitude, lng: selectedCommunity.longitude} : mapCenter}
+				defaultCenter={mapCenter}
 				defaultZoom={zoomLoad(currentLocation)}
 				disableDefaultUI={false}
 				streetViewControl={true}
 				mapTypeControl={false}
-				
 			>
 				<AdvancedMarker
 				position={currentLocation}
@@ -246,7 +285,6 @@ export default function HealthMap() {
 						)} 
 					</>
 				))}
-				<Directions currentLocation={currentLocation} selectedPlace={destinationLocation}/>
 			</Map>
 			<MapHandler place={selectedPlace} />
 		</div>

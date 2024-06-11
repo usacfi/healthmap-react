@@ -6,14 +6,13 @@ import 'react-widgets/styles.css';
 
 interface Props {
   onPlaceSelect: (place: google.maps.places.PlaceResult | null) => void;
-  selectedPlace: google.maps.LatLng | undefined
+  selectedPlace: google.maps.LatLng | undefined;
+  currentLocation: google.maps.LatLngLiteral | google.maps.LatLng;
 }
 
-export const AutocompleteSearch = ({onPlaceSelect, selectedPlace}: Props) => {
+export const AutocompleteSearch = ({onPlaceSelect, selectedPlace, currentLocation}: Props) => {
   	const map = useMap();
   	const places = useMapsLibrary('places');
-
-	const directions = useMapsLibrary('routes');
 
 	const [sessionToken, setSessionToken] = useState<google.maps.places.AutocompleteSessionToken>();
 	const [autocompleteService, setAutocompleteService] = useState<google.maps.places.AutocompleteService | null>(null);
@@ -21,8 +20,20 @@ export const AutocompleteSearch = ({onPlaceSelect, selectedPlace}: Props) => {
 	const [predictionResults, setPredictionResults] = useState<Array<google.maps.places.AutocompletePrediction>>([]);
 
 	const [inputValue, setInputValue] = useState<string>('');
+	const [clearButtonVisible, setClearButtonVisible] = useState(false);
 
 	const [fetchingData, setFetchingData] = useState<boolean>(false);
+
+	// Update the direction request with the new selected place
+	const [directions, updateDirections] = useState<google.maps.LatLng | undefined>()
+
+	const handleClearClick = () => {
+		setInputValue('');
+		setClearButtonVisible(false);
+		onPlaceSelect(null); // Clear the selected place
+		map?.panTo(currentLocation); // Pan the map to the current location
+		map?.setZoom(16); // Set the zoom level to 16
+	  };
 
 	useEffect(() => {
 		if (!places || !map) return;
@@ -61,6 +72,7 @@ export const AutocompleteSearch = ({onPlaceSelect, selectedPlace}: Props) => {
     (value: google.maps.places.AutocompletePrediction | string) => {
       if (typeof value === 'string') {
         setInputValue(value);
+		setClearButtonVisible(value.length > 0);
         fetchPredictions(value);
       }
     },
@@ -84,6 +96,9 @@ export const AutocompleteSearch = ({onPlaceSelect, selectedPlace}: Props) => {
 			setInputValue(placeDetails?.name ?? '');
 			setSessionToken(new places.AutocompleteSessionToken());
 			setFetchingData(false);
+
+			// Update the direction request with the new selected place
+			updateDirections(placeDetails?.geometry?.location);
 		};
 
 		placesService?.getDetails(detailRequestOptions, detailsRequestCallback);
@@ -93,6 +108,13 @@ export const AutocompleteSearch = ({onPlaceSelect, selectedPlace}: Props) => {
 
 	return (
 		<>
+			<col>
+			</col>
+			{clearButtonVisible && (
+				<button className="clear-button" onClick={handleClearClick}>
+				Clear ❌
+				</button>
+			)}
 			<Combobox
 			placeholder="Find a health facility..."
 			data={predictionResults}
