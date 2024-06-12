@@ -66,8 +66,6 @@ export default function Directions({ currentLocation, selectedPlace, map }: Prop
 	<div className="directions">
 		<b>{selected.summary}</b>
 		<br/><br/>
-		{/* <i>{leg.start_address.split(',')[0]}</i> to <i>{leg.end_address.split(',')[0]}</i> */}
-
 		<div className="dist-time">
 			<div className="label">Distance</div>
 			<div className="value">{leg.distance?.text}</div>

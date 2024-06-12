@@ -13,6 +13,7 @@ import {Spinner, Alert, Dropdown, DropdownButton} from 'react-bootstrap';
 
 // files
 import '../styles/globals.css';
+import Logo from '../resources/5717514.png'
 
 // components
 import { Circle } from './circle';
@@ -33,16 +34,18 @@ export default function HealthMap() {
     const [loadingState, setLoadingState] = useState(true);
 	const [userLocation, setUserLocation] = useState<google.maps.LatLngLiteral | google.maps.LatLng>({ lat: 11.0050, lng: 122.5373 })
 
-	var radiusNum = 700;	// Radius = 700 meter radius
+	var radiusNum = 500;	
 	const [radius, setRadius] = useState(radiusNum);
+	var radiusKM = (radius+200)/1000 // convert to KM
 	const [markers, setMarkers] = useState<{ name: string; healthResourceType: string; address: string; latitude: number; longitude: number}[]>([])
 
 	// this the zoom of the map. If the map did not load it will automatically zoom out to show the whole region
-	const zoomLoad = (currentLocation: google.maps.LatLng | google.maps.LatLngLiteral) => currentLocation.lat === 11.0050 && currentLocation.lng === 122.5373 ? 9 : 16;
+	const zoomLoad = (currentLocation: google.maps.LatLng | google.maps.LatLngLiteral) => currentLocation.lat === 11.0050 && currentLocation.lng === 122.5373 ? 9 : 16.5;
 
 	// conditionals in changing the color relative to the radius
-	const getFillColor = (radius: number) => radius <= radiusNum ? '#3b82f6' : (radius > radiusNum && radius <= 1400) ? '#ffd55c' : '#f44336';
-	const getStrokeColor = (radius: number) => radius <= radiusNum ? '#0c4cb3' : (radius > radiusNum && radius <= 1400) ? '#4c3f1b' : '#300d0a';
+	const reachTextChange = (radius: number) => radius <= radiusNum ? 'Walkable' : (radius > radiusNum && radius <= 1800) ? 'Commute' : 'Too Far';
+	const getFillColor = (radius: number) => radius <= radiusNum ? '#3b82f6' : (radius > radiusNum && radius <= 1800) ? '#ffd55c' : '#f44336';
+	const getStrokeColor = (radius: number) => radius <= radiusNum ? '#0c4cb3' : (radius > radiusNum && radius <= 1800) ? '#4c3f1b' : '#300d0a';
 
 	const map = useMap()
 
@@ -159,9 +162,10 @@ export default function HealthMap() {
     return (
 	<div className="container">
 		<div className='controls'>
-			<center>
-				<h1>Health Map</h1>
-			</center>
+			<div className="logo-title">
+				<img className='logo' src={Logo} alt='Logo of Health Map'/>
+				<h1 className="title">Health Map</h1>
+			</div>
 
 			<h3>Search Facilities</h3>			
 			{map && (
@@ -169,6 +173,21 @@ export default function HealthMap() {
 	
 			{map && selectedPlace && (
 				<Directions currentLocation={currentLocation} selectedPlace={destinationLocation} map={map} />)}
+
+			{/* <h2>Access Range</h2> */}
+			<div className="dist-time" style={{marginTop: 30}}>
+				<div className="label">Access Range</div>
+				<div className="value">{radiusKM.toFixed(2)} km</div>
+			</div>
+
+			<div className="dist-time" style={{marginBottom: 30}}>
+				<div className="label">Reachability</div>
+				<div style={{ display: 'flex', alignItems: 'center' }}>
+					<span>{reachTextChange(radius)}</span>
+					<div style={{ backgroundColor: getFillColor(radius), width: 20, height: 20, borderRadius: 10, marginLeft: 10 }} />
+				</div>
+			</div>
+
 
 			<h3>Health Facilities Type</h3>
 			<select className='dropdown-facilities' value={selectedHealthResourceType} onChange={handleHealthResourceTypeChange}>
@@ -188,11 +207,7 @@ export default function HealthMap() {
 					map.panTo(currentLocation);
 					map.setZoom(16);
 					}
-				}}>
-					{/* <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-						<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-						<circle cx="12" cy="10" r="3" />
-					</svg> */}
+				}}>					
 					📍
 				</button> 
 			</div>
