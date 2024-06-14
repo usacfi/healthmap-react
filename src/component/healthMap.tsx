@@ -7,9 +7,10 @@ import {
 	useMapsLibrary,
 	useAdvancedMarkerRef,
 	useMap,
+	Pin
 } from '@vis.gl/react-google-maps';
 import { useState, useMemo, useEffect } from "react";
-import {Spinner, Alert, Dropdown, DropdownButton} from 'react-bootstrap';
+import {Spinner, Alert} from 'react-bootstrap';
 
 // files
 import '../styles/globals.css';
@@ -149,7 +150,44 @@ export default function HealthMap() {
 		}
 	}, [markers, selectedHealthResourceType]);
 
-	const healthResourceTypesOptions = healthResourceTypes.map((type) => ({ name: type }));
+	const getMarkerColor = (healthResourceType: string) => {
+		switch (healthResourceType) {
+			case 'Hospital':
+				return '#6f1926'; // red
+			case 'Medical Laboratory':
+				return '#de324c'; // green
+			case 'Dialysis Clinic':
+				return '#95cf92'; // blue
+			case 'Ambulatory Clinic':
+				return '#95cf92'; // blue
+			case 'Hospital':
+				return '#f8e16f'; // red
+			case 'Barangay Health Station':
+				return '#369acc'; // green
+			case 'DOTS Providing Facility':
+				return '#9656a2'; // blue
+			case 'DOTS Referring Facility':
+				return '#9656a2'; // blue
+			case 'Municipal Health Office':
+				return '#369acc'; // red
+			case 'PMDT Facility':
+				return '#9656a2'; // green
+			case 'Pharmacy':
+				return '#f4895f'; // blue
+			case 'Private MTBN Facility':
+				return '#9656a2'; // blue
+			case 'Provincial Health Office':
+				return '#369acc'; // green
+			case 'Rural Health Unit"':
+				return '#369acc'; // blue
+			case 'iDOTS Facility':
+				return '#9656a2'; // blue
+		  default:
+			return '#3b82f6';
+		}
+	  };
+
+	console.log(Pin)
 
 	if (loadingState === true) {
 		return (
@@ -283,7 +321,21 @@ export default function HealthMap() {
 						collisionBehavior={CollisionBehavior.REQUIRED_AND_HIDES_OPTIONAL}
 						onClick={() => handleMarkerClick(marker)}
 						title={marker.name}
-						/>
+						>
+							<div
+								style={{
+								width: 12,
+								height: 12,
+								position: 'absolute',
+								top: 0,
+								left: 0,
+								background: getMarkerColor(marker.healthResourceType),
+								border: '1px solid #c3c3c3',
+								borderRadius: '50%',
+								transform: 'translate(-50%, -50%)',
+								}}
+							/>
+						</AdvancedMarker>
 
 						{infowindowOpen && selectedMarker === marker && (
 							<InfoWindow
