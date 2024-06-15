@@ -153,7 +153,7 @@ export default function HealthMap() {
 	const getMarkerColor = (healthResourceType: string) => {
 		switch (healthResourceType) {
 			case 'Hospital':
-				return '#6f1926'; // red
+				return '#6f1926'; 
 			case 'Medical Laboratory':
 				return '#de324c'; // green
 			case 'Dialysis Clinic':
@@ -182,12 +182,12 @@ export default function HealthMap() {
 				return '#369acc'; // blue
 			case 'iDOTS Facility':
 				return '#9656a2'; // blue
+			case 'Birthing Clinic':
+				return '#cbabd1'
 		  default:
 			return '#3b82f6';
 		}
 	  };
-
-	console.log(Pin)
 
 	if (loadingState === true) {
 		return (
@@ -255,6 +255,7 @@ export default function HealthMap() {
 					dataKey='name' 
 					textField='name' 
 					placeholder='Select Community'
+					filter={false}
 					onSelect={(community) => handleCommunitySelect(community)}
 				/>
 				{/* <div  className='button-stack'>

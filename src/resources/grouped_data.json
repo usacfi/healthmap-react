@@ -15796,6 +15796,1247 @@
             "longitude": 123.0426721
         }
     ],
+    "Birthing Clinic": [
+        {
+         "name":"A. DUMDUM MIDWIFE CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"S. Aguilar Road, National Highway, Poblacion I, City Of Sagay, Negros Occidental",
+         "latitude":10.8783445,
+         "longitude":123.408176
+        },
+        {
+         "name":"AGLALANA BARANGAY HEALTH STATION AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Aglalana, Dumarao, Capiz",
+         "latitude":11.26673,
+         "longitude":122.6856
+        },
+        {
+         "name":"AJUY BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Rizal Street, Poblacion, Ajuy, Iloilo",
+         "latitude":10.7845453,
+         "longitude":122.5888852
+        },
+        {
+         "name":"ALDERMAN'S NATAL CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Rizal Ext., Barangay 9 (Pob.), City Of Kabankalan, Negros Occidental",
+         "latitude":9.9863233,
+         "longitude":122.8158544
+        },
+        {
+         "name":"ALIGTOS BARANGAY HEALTH STATION; BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Sitio Aligtos, Igpalge, Barbaza, Antique",
+         "latitude":11.2313055,
+         "longitude":122.0659894
+        },
+        {
+         "name":"ALMALBIS BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"#52, Punta Tabuc, City Of Roxas (Capital), Capiz",
+         "latitude":11.5758634,
+         "longitude":122.7449573
+        },
+        {
+         "name":"ANGEL'S HAVEN BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"#4 Deles Jover St.,, Macarthur, City Of Iloilo (Capital), Iloilo",
+         "latitude":10.7096742,
+         "longitude":122.5696485
+        },
+        {
+         "name":"ANGELICA C. YSULAN MIDWIFE CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Equaldad, Gov. Rafael Lacson St., Zone 12 (Pob.), City Of Talisay, Negros Occidental",
+         "latitude":10.7366662,
+         "longitude":122.9681223
+        },
+        {
+         "name":"ANGIE ALBAY MIDWIFE CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"De La Pe\u00f1a St., Zone Ii (Pob.), Murcia, Negros Occidental",
+         "latitude":10.605025,
+         "longitude":123.0452145
+        },
+        {
+         "name":"ANILAO RURAL HEALTH UNIT AND BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Anilao, Iloilo",
+         "latitude":11.0002604,
+         "longitude":122.740723
+        },
+        {
+         "name":"ANINI-Y RHU",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Anini-Y, Antique",
+         "latitude":10.4323317,
+         "longitude":121.9266891
+        },
+        {
+         "name":"ANTONIO ARCIGA BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion Norte, Ivisan, Capiz",
+         "latitude":11.5228561,
+         "longitude":122.6941349
+        },
+        {
+         "name":"BACOLOD CITY LYING-IN AND BIRTHING HOME CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"A.B. Parreno St., Barangay 20 (Pob.), City Of Bacolod (Capital), Negros Occidental",
+         "latitude":10.6675751,
+         "longitude":122.9563053
+        },
+        {
+         "name":"BAGO CITY HEALTH OFFICE BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"A. Gonzaga St., Poblacion, City Of Bago, Negros Occidental",
+         "latitude":10.5375485,
+         "longitude":122.8346134
+        },
+        {
+         "name":"BALASAN MUNICIPAL HEALTH OFFICE AND BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion Sur, Balasan, Iloilo",
+         "latitude":11.4684335,
+         "longitude":123.0859343
+        },
+        {
+         "name":"BALBERONA BLUESTAR FAMILY PLANNING AND MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Zone 1, Lot 2, Block 3, Coastal View Subdivision, Balabago, City Of Iloilo (Capital), Iloilo",
+         "latitude":10.7627247,
+         "longitude":122.5953631
+        },
+        {
+         "name":"BALBERONA FAMILY PLANNING AND MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Calahunan, City Of Iloilo (Capital), Iloilo",
+         "latitude":10.7175293,
+         "longitude":122.5245452
+        },
+        {
+         "name":"BALETE BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Juan C. Oquendo St, Poblacion, Balete, Aklan",
+         "latitude":11.5301897,
+         "longitude":122.367428
+        },
+        {
+         "name":"BANATE RURAL HEALTH UNIT &amp; BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Real Street, Poblacion, Banate, Iloilo",
+         "latitude":11.000592,
+         "longitude":122.8155554
+        },
+        {
+         "name":"BANGA HEALTH CENTER BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Sampaguita St., Poblacion, Banga, Aklan",
+         "latitude":11.6392506,
+         "longitude":122.3322919
+        },
+        {
+         "name":"BARANGAY ABIERA BIRTHING HOME",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Abiera, Sebaste, Antique",
+         "latitude":11.5667421,
+         "longitude":122.1121466
+        },
+        {
+         "name":"BARANGAY BACALAN HEALTH STATION\/BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Bacalan, Sebaste, Antique",
+         "latitude":11.5474865,
+         "longitude":122.086585
+        },
+        {
+         "name":"BARANGAY SEMIRARA BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Semirara, Caluya, Antique",
+         "latitude":12.031897,
+         "longitude":121.3884671
+        },
+        {
+         "name":"BARBAZA RURAL HEALTH UNIT",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Barbaza, Antique",
+         "latitude":11.1938032,
+         "longitude":122.0425482
+        },
+        {
+         "name":"BAROTAC VIEJO MUNICIPAL HEALTH OFFICE AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Barotac Viejo, Iloilo",
+         "latitude":11.0625316,
+         "longitude":122.8761309
+        },
+        {
+         "name":"BATAD PRIMARY CARE FACILITY (PCF)",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Cuenca St., Poblacion, Batad, Iloilo",
+         "latitude":11.4169972,
+         "longitude":123.1126559
+        },
+        {
+         "name":"BELISON RURAL HEALTH UNIT",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Delima St., Poblacion, Belison, Antique",
+         "latitude":10.8475866,
+         "longitude":121.9871217
+        },
+        {
+         "name":"BENAL FAMILY PLANNING AND MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Lot 1 Block 1 New Baldoza, Lanit, City Of Iloilo (Capital), Iloilo",
+         "latitude":10.7669179,
+         "longitude":122.5641411
+        },
+        {
+         "name":"BENAL FAMILY PLANNING AND MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Zone Iii, Baldoza, City Of Iloilo (Capital), Iloilo",
+         "latitude":10.7128563,
+         "longitude":122.5803992
+        },
+        {
+         "name":"BERMEJO-CERVANTES MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Prk. Masinadyahon, Bata, City Of Bacolod (Capital), Negros Occidental",
+         "latitude":10.7023488,
+         "longitude":122.974265
+        },
+        {
+         "name":"BETH LYING-IN CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Purok Kasagingan, Banago, City Of Bacolod (Capital), Negros Occidental",
+         "latitude":10.7067586,
+         "longitude":122.9506158
+        },
+        {
+         "name":"BINGAWAN RHU MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Pagara St., Poblacion, Bingawan, Iloilo",
+         "latitude":11.2052871,
+         "longitude":122.593828
+        },
+        {
+         "name":"BRGY. IGTALONGON BHS AND BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Igtalongon, Igbaras, Iloilo",
+         "latitude":10.748924,
+         "longitude":122.2327722
+        },
+        {
+         "name":"BUENAVISTA RHU &amp; BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"New Poblacion, Buenavista, Guimaras",
+         "latitude":10.7050618,
+         "longitude":122.6418745
+        },
+        {
+         "name":"BUGASONG RURAL HEALTH UNIT",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Centro Ilaya (Pob.), Bugasong, Antique",
+         "latitude":11.0382571,
+         "longitude":122.0695406
+        },
+        {
+         "name":"BURUANGA  MUNICIPAL HEALTH OFFICE &amp; BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Nitoy St., Poblacion, Buruanga, Aklan",
+         "latitude":11.8259677,
+         "longitude":121.9131761
+        },
+        {
+         "name":"CABATUAN RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"San Agustin St., Zone Viii Pob., Cabatuan, Iloilo",
+         "latitude":10.8810321,
+         "longitude":122.4813568
+        },
+        {
+         "name":"CADIZ CITY HEALTH OFFICE BIRTHING HOME",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Cabahug St., Barangay 3 Pob., City Of Cadiz, Negros Occidental",
+         "latitude":10.9579059,
+         "longitude":123.307248
+        },
+        {
+         "name":"CAJERMAN LYING-IN AND BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Purok 7, Bantayan, City Of Kabankalan, Negros Occidental",
+         "latitude":9.8786149,
+         "longitude":122.7619906
+        },
+        {
+         "name":"CALATRAVA RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"National Highway, Lo-Ok (Pob.), Calatrava, Negros Occidental",
+         "latitude":10.5954449,
+         "longitude":123.4761861
+        },
+        {
+         "name":"CALINOG RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Quezon St., Poblacion Ilaya, Calinog, Iloilo",
+         "latitude":11.1219261,
+         "longitude":122.5371054
+        },
+        {
+         "name":"CALLAN BARANGAY HEALTH STATION",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Callan, Sebaste, Antique",
+         "latitude":11.6633562,
+         "longitude":122.1004583
+        },
+        {
+         "name":"CALUMPANG BARANGAY HEALTH STATION AND BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Zone 3, Juntado Subdivision, Calumpang, City Of Iloilo (Capital), Iloilo",
+         "latitude":10.6850682,
+         "longitude":122.5414119
+        },
+        {
+         "name":"CALUYA MUNICIPAL HEALTH OFFICE AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Caluya, Antique",
+         "latitude":11.9327385,
+         "longitude":121.5470605
+        },
+        {
+         "name":"CARLES RURAL HEALTH UNIT AND BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"A. Betita Avenue, Sitio Gua Poblacion,, Poblacion, Carles, Iloilo",
+         "latitude":11.5687532,
+         "longitude":123.2363246
+        },
+        {
+         "name":"CARMELA ORCAJADA\u2013CASUMPONG MIDWIFE CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Cor. Cottage Road, Barangay 9 (Pob.), City Of Bacolod (Capital), Negros Occidental",
+         "latitude":10.6743353,
+         "longitude":122.9503634
+        },
+        {
+         "name":"CDE MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Bliss Project, Barangay I-A (Pob.), Manapla, Negros Occidental",
+         "latitude":10.9493351,
+         "longitude":123.1309349
+        },
+        {
+         "name":"CELCA BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Zone 7, San Isidro, City Of Iloilo (Capital), Iloilo",
+         "latitude":10.71324,
+         "longitude":122.55816
+        },
+        {
+         "name":"CENTRAL PHILIPPINE UNIVERSITY BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Lopez Jaena St., San Isidro, City Of Iloilo (Capital), Iloilo",
+         "latitude":10.7347674,
+         "longitude":122.5474501
+        },
+        {
+         "name":"CFC BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Blk 49 Lot 1, Bolilao, City Of Iloilo (Capital), Iloilo",
+         "latitude":10.7133715,
+         "longitude":122.5549505
+        },
+        {
+         "name":"CHAIM LYING \u2013 IN AND BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Crossing Bocana, Dancalan, Ilog, Negros Occidental",
+         "latitude":9.9823742,
+         "longitude":122.738073
+        },
+        {
+         "name":"CITY HEALTH OFFICE BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":", Barangay Iii (Pob.), City Of San Carlos, Negros Occidental",
+         "latitude":10.4832783,
+         "longitude":123.423636
+        },
+        {
+         "name":"CONCEPCION RHU BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Confesor St.,, Poblacion, Concepcion, Iloilo",
+         "latitude":11.2033266,
+         "longitude":123.0901539
+        },
+        {
+         "name":"CREVERDEN MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Atabay, San Jose (Capital), Antique",
+         "latitude":10.7593863,
+         "longitude":121.9487331
+        },
+        {
+         "name":"CUARTERO RURAL HEALTH UNIT",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Funcion Street, Poblacion Ilawod, Cuartero, Capiz",
+         "latitude":11.3423195,
+         "longitude":122.6694205
+        },
+        {
+         "name":"CULASI RURAL HEALTH UNIT",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Cadiao Street, Centro Poblacion, Culasi, Antique",
+         "latitude":11.4259605,
+         "longitude":122.0550344
+        },
+        {
+         "name":"DAO RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion Ilawod, Dao, Capiz",
+         "latitude":11.3970563,
+         "longitude":122.6863681
+        },
+        {
+         "name":"DINGLE RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"R. Palabrica Street, Poblacion, Dingle, Iloilo",
+         "latitude":11.0719604,
+         "longitude":122.6560289
+        },
+        {
+         "name":"DR. RAMON B. LEGASPI, SR. MEMORIAL BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Makato, Aklan",
+         "latitude":11.7105704,
+         "longitude":122.2965778
+        },
+        {
+         "name":"DUE\u00d1AS MUNICIPAL HEALTH OFFICE",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Piccio Street, Poblacion A, Due?As, Iloilo",
+         "latitude":11.0697649,
+         "longitude":122.6235064
+        },
+        {
+         "name":"EDITH MONTIBOR WELL FAMILY MIDWIFE CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Hervias Iii, Villamonte, City Of Bacolod (Capital), Negros Occidental",
+         "latitude":10.6753444,
+         "longitude":122.9680539
+        },
+        {
+         "name":"ELMA B. BOLUSO MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Tanque, City Of Roxas (Capital), Capiz",
+         "latitude":11.5878856,
+         "longitude":122.74778
+        },
+        {
+         "name":"ELNA B. TINGSON MIDWIFE CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"National Road Purok Commercial, Paraiso, City Of Sagay, Negros Occidental",
+         "latitude":10.9509029,
+         "longitude":123.2937398
+        },
+        {
+         "name":"ENOC MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Bangga Deling, Alicante, Enrique B. Magalona, Negros Occidental",
+         "latitude":10.8961295,
+         "longitude":123.0141721
+        },
+        {
+         "name":"ESCALANTE CITY MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"East Avenue, Balintawak (Pob.), City Of Escalante, Negros Occidental",
+         "latitude":10.8391884,
+         "longitude":123.5025586
+        },
+        {
+         "name":"ESPIE BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Lot 2,4,6 &Amp; 8, Blk. 8, Gloriville Subd.,, Barangay Xiii, City Of Victorias, Negros Occidental",
+         "latitude":10.8968008,
+         "longitude":123.0659459
+        },
+        {
+         "name":"EUDEGILDA P. TARRE MIDWIFE CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"National Highway, Tangub, City Of Bacolod (Capital), Negros Occidental",
+         "latitude":10.5911269,
+         "longitude":122.9134034
+        },
+        {
+         "name":"EVA F. PAMINTO MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion Sur, Sigma, Capiz",
+         "latitude":11.4212337,
+         "longitude":122.6609456
+        },
+        {
+         "name":"FAMILY FIRST MATERNITY AND PEDIATRIC CLINIC INC.",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Rizal Street, Poblacion, City Of Bago, Negros Occidental",
+         "latitude":10.5313868,
+         "longitude":122.8358229
+        },
+        {
+         "name":"FE'S BIRTHING HOME",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Cansilayan, Pototan, Iloilo",
+         "latitude":10.8811835,
+         "longitude":122.6574142
+        },
+        {
+         "name":"GALICANO MATERNITY (BIRTHING HOME) CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"M.A. Roxas St., Poblacion Norte, Ivisan, Capiz",
+         "latitude":11.5226938,
+         "longitude":122.6957649
+        },
+        {
+         "name":"GEM BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Bongco, Pototan, Iloilo",
+         "latitude":10.8527085,
+         "longitude":122.6489383
+        },
+        {
+         "name":"HAMTIC BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"La Paz, Hamtic, Antique",
+         "latitude":10.7047583,
+         "longitude":121.9709296
+        },
+        {
+         "name":"HELEN ALBA-WELL FAMILY MIDWIFE CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Cabugao, City Of Roxas (Capital), Capiz",
+         "latitude":11.5146971,
+         "longitude":122.7491913
+        },
+        {
+         "name":"HIMAMAYLAN CITY HEALTH OFFICE AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Corner Rizal-Vasquez Sts., Barangay I (Pob.), City Of Himamaylan, Negros Occidental",
+         "latitude":10.0971956,
+         "longitude":122.8690828
+        },
+        {
+         "name":"HINIGARAN MUNICIPAL HEALTH OFFICE &amp; BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Aguilar St., Barangay Iii (Pob.), Hinigaran, Negros Occidental",
+         "latitude":10.2711218,
+         "longitude":122.8525838
+        },
+        {
+         "name":"HINOBA-AN RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Gatuslao Street, Barangay I (Pob.), Hinoba-An, Negros Occidental",
+         "latitude":9.6008016,
+         "longitude":122.4669392
+        },
+        {
+         "name":"IDIO BHS BRGY. IDIO BIRTHING HOME",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Idio, Sebaste, Antique",
+         "latitude":11.6250961,
+         "longitude":122.1235054
+        },
+        {
+         "name":"ILOG RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Mabini St.,, Barangay I (Pob.), Ilog, Negros Occidental",
+         "latitude":10.0261416,
+         "longitude":122.7687653
+        },
+        {
+         "name":"ILOILO DOCTORS' COLLEGE, OPD MATERNITY SERVICES AND LYING IN CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"West Avenue, Molo, West Timawa, City Of Iloilo (Capital), Iloilo",
+         "latitude":10.6954239,
+         "longitude":122.5549871
+        },
+        {
+         "name":"IMM\u2019S MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Purok Fortune Town B, Estefania, City Of Bacolod (Capital), Negros Occidental",
+         "latitude":10.6708596,
+         "longitude":122.9896703
+        },
+        {
+         "name":"IMM\u2019S MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Purok Mabinuligon, Mansilingan, City Of Bacolod (Capital), Negros Occidental",
+         "latitude":10.6125841,
+         "longitude":122.9203812
+        },
+        {
+         "name":"INTEGRATED MIDWIVES ASSOCIATION OF THE PHILIPPINES (IMAP) FOUNDATION SCHOOL OF MIDWIFERY, INC.",
+         "healthResourceType":"Birthing Clinic",
+         "address":"#41 Burgos St., Burgos-Mabini-Plaza, City Of Iloilo (Capital), Iloilo",
+         "latitude":10.71411,
+         "longitude":122.567521
+        },
+        {
+         "name":"IVISAN RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Zamora St., Poblacion Norte, Ivisan, Capiz",
+         "latitude":11.2622101,
+         "longitude":122.5359492
+        },
+        {
+         "name":"JAISARUS WELL FAMILY MIDWIFE CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Purok Crotons, Poblacion Ii, City Of Sagay, Negros Occidental",
+         "latitude":10.896024,
+         "longitude":123.4124216
+        },
+        {
+         "name":"JAMINDAN PRIMARY CARE FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Jamindan, Capiz",
+         "latitude":11.2629902,
+         "longitude":122.5358599
+        },
+        {
+         "name":"JOSEPHINE PE\u00d1ACOZA WELLCARE MIDWIFE CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"243 D.T. Lutero Street, Don T. Lutero Center (Pob.), Janiuay, Iloilo",
+         "latitude":10.9505693,
+         "longitude":122.4978411
+        },
+        {
+         "name":"KALIBO HEALTH AND BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"N. Roldan St., Poblacion, Kalibo (Capital), Aklan",
+         "latitude":11.7107797,
+         "longitude":122.3664274
+        },
+        {
+         "name":"LA CARLOTA CITY GOVERNMENT MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Jeresa St.,, Barangay I (Pob.), City Of La Carlota, Negros Occidental",
+         "latitude":10.4252084,
+         "longitude":122.920522
+        },
+        {
+         "name":"LA CASTELLANA MUNICIPAL HEALTH OFFICE AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Bonifacio Street, Robles (Pob.), La Castellana, Negros Occidental",
+         "latitude":10.33131,
+         "longitude":123.0226174
+        },
+        {
+         "name":"LAPAZ MATERNITY AND REPRODUCTIVE HEALTH CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Burgos Street, Lapaz, Gustilo, City Of Iloilo (Capital), Iloilo",
+         "latitude":10.7145183,
+         "longitude":122.5673701
+        },
+        {
+         "name":"LAUA-AN RURAL HEALTH UNIT AND BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Zamora St., Poblacion, Laua-An, Antique",
+         "latitude":11.1637611,
+         "longitude":122.1178261
+        },
+        {
+         "name":"LEGANES RURAL HEALTH UNIT BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Leganes, Iloilo",
+         "latitude":10.7863641,
+         "longitude":122.5867605
+        },
+        {
+         "name":"LEMERY PRIMARY CARE FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion Se Zone, Lemery, Iloilo",
+         "latitude":11.2109068,
+         "longitude":122.9296796
+        },
+        {
+         "name":"LEON RURAL HEALTH UNIT BIRTHING CENTER AND BEMONC FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Capalla Avenue, Poblacion, Leon, Iloilo",
+         "latitude":10.7807757,
+         "longitude":122.3875331
+        },
+        {
+         "name":"LEZO BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Saturnino Fernandez, Poblacion, Lezo, Aklan",
+         "latitude":11.6669113,
+         "longitude":122.3289639
+        },
+        {
+         "name":"LGU-JANIUAY BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Locsin (Pob.), Janiuay, Iloilo",
+         "latitude":10.9479871,
+         "longitude":122.5040343
+        },
+        {
+         "name":"LIBACAO HEALTH CENTER BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Libacao, Aklan",
+         "latitude":11.4092207,
+         "longitude":122.2973756
+        },
+        {
+         "name":"LIBERTAD POLYCLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Union, Libertad, Antique",
+         "latitude":11.7594988,
+         "longitude":121.8944255
+        },
+        {
+         "name":"LIEZEL P. ESPEJA MIDWIFE CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Alfelor St., Man-It, City Of Passi, Iloilo",
+         "latitude":11.112114,
+         "longitude":122.6447373
+        },
+        {
+         "name":"MAAYON RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion Ilaya, Ma-Ayon, Capiz",
+         "latitude":11.3819354,
+         "longitude":122.7830574
+        },
+        {
+         "name":"MADALAG RURAL HEALTH UNIT",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Milagrosa St., Poblacion, Madalag, Aklan",
+         "latitude":11.525151,
+         "longitude":122.307917
+        },
+        {
+         "name":"MALINAO BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Sto. Rosario St., Poblacion, Malinao, Aklan",
+         "latitude":11.6442599,
+         "longitude":122.3075406
+        },
+        {
+         "name":"MAMBUSAO RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion Proper, Mambusao, Capiz",
+         "latitude":11.4312573,
+         "longitude":122.5952415
+        },
+        {
+         "name":"MANAPLA RURAL HEALTH UNIT BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Barangay I-A (Pob.), Manapla, Negros Occidental",
+         "latitude":10.9493351,
+         "longitude":123.1309349
+        },
+        {
+         "name":"MANINANG BARANGAY HEALTH STATION",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Sitio Proper, Maninang, Sapi-An, Capiz",
+         "latitude":11.4758108,
+         "longitude":122.5853469
+        },
+        {
+         "name":"MARCK MATERNITY CLINIC, INC.",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Felipe B. Lacson St., Zone 12 (Pob.), City Of Talisay, Negros Occidental",
+         "latitude":10.7366662,
+         "longitude":122.9681223
+        },
+        {
+         "name":"MARY ANADEL LYING IN AND BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Unica Homes, Barangay 9 (Pob.), City Of Kabankalan, Negros Occidental",
+         "latitude":9.9824304,
+         "longitude":122.8243957
+        },
+        {
+         "name":"MINA MUNICIPAL PRIMARY HEALTH CARE FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Patarata St., Mina West (Pob.), Mina, Iloilo",
+         "latitude":10.9309395,
+         "longitude":122.5697964
+        },
+        {
+         "name":"MOTHER'S JOY BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Don Esteban-Lapuz, City Of Iloilo (Capital), Iloilo",
+         "latitude":10.7058258,
+         "longitude":122.5775719
+        },
+        {
+         "name":"MUNICIPAL HEALTH &amp; BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Tupan St., Barangay 5 (Pob.), Tigbauan, Iloilo",
+         "latitude":10.6800711,
+         "longitude":122.3815235
+        },
+        {
+         "name":"MUNICIPAL HEALTH OFFICE - BINALBAGAN AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Carmen St., San Pedro (Pob.), Binalbagan, Negros Occidental",
+         "latitude":10.195598,
+         "longitude":122.8606306
+        },
+        {
+         "name":"MUNICIPAL HEALTH OFFICE ENRIQUE B. MAGALONA",
+         "healthResourceType":"Birthing Clinic",
+         "address":"A. Barrera St., Poblacion Iii, Enrique B. Magalona, Negros Occidental",
+         "latitude":10.879266,
+         "longitude":122.9789587
+        },
+        {
+         "name":"MUNICIPAL HEALTH OFFICE, ISABELA, NEGROS OCCIDENTAL BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Borromeo Street, Barangay 4 (Pob.), Isabela, Negros Occidental",
+         "latitude":10.2052527,
+         "longitude":122.9889112
+        },
+        {
+         "name":"MURCIA HEALTH CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Rizal St., Zone Iii (Pob.), Murcia, Negros Occidental",
+         "latitude":10.6079231,
+         "longitude":123.0502106
+        },
+        {
+         "name":"NABAS RURAL HEALTH UNIT-MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Nabas, Aklan",
+         "latitude":11.84724,
+         "longitude":122.046018
+        },
+        {
+         "name":"NEGROS WOMEN FOR TOMORROW FOUNDATION, INC.",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Cauayan, Negros Occidental",
+         "latitude":9.9713111,
+         "longitude":122.6235064
+        },
+        {
+         "name":"NEW WASHINGSTON SUPER HEALTH CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Oquendo St., Poblacion, New Washington, Aklan",
+         "latitude":11.6430387,
+         "longitude":122.4382307
+        },
+        {
+         "name":"NS PALAY LYING IN CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Serafin Aguilar St., Poblacion I, City Of Sagay, Negros Occidental",
+         "latitude":10.8819049,
+         "longitude":123.4131226
+        },
+        {
+         "name":"NUEVA VALENCIA RURAL HEALTH AND BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Nueva Valencia, Guimaras",
+         "latitude":10.5270151,
+         "longitude":122.5287884
+        },
+        {
+         "name":"NUMANCIA BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Numancia, Aklan",
+         "latitude":11.7119685,
+         "longitude":122.3645949
+        },
+        {
+         "name":"PANAY MUNICIPAL HEALTH OFFICE AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion Ilawod, Panay, Capiz",
+         "latitude":11.5570657,
+         "longitude":122.7957543
+        },
+        {
+         "name":"PANDAN RURAL HEALTH UNIT",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Centro Norte (Pob.), Pandan, Antique",
+         "latitude":11.7228013,
+         "longitude":122.0943962
+        },
+        {
+         "name":"PANITAN RURAL HEALTH UNIT AND BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion Ilaya, Panitan, Capiz",
+         "latitude":11.4611693,
+         "longitude":122.7668313
+        },
+        {
+         "name":"PATNONGON PRIMARY CARE FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Real Street, Poblacion, Patnongon, Antique",
+         "latitude":10.7783011,
+         "longitude":121.9423293
+        },
+        {
+         "name":"PAUCHANO BIRTHING HOME",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Zone 4, Bito-On, City Of Iloilo (Capital), Iloilo",
+         "latitude":10.7565698,
+         "longitude":122.5895875
+        },
+        {
+         "name":"PAVIA BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Sumakwel St., Purok Ii (Pob.), Pavia, Iloilo",
+         "latitude":10.7751181,
+         "longitude":122.5415064
+        },
+        {
+         "name":"PEARL MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Dona Julia St., Airport Subd., Singcang-Airport, City Of Bacolod (Capital), Negros Occidental",
+         "latitude":10.6515623,
+         "longitude":122.9326615
+        },
+        {
+         "name":"PILAR RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Pilar, Capiz",
+         "latitude":11.4833764,
+         "longitude":122.9972793
+        },
+        {
+         "name":"PINAMUK-AN HEALTH STATION AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Pinamuk-An, New Washington, Aklan",
+         "latitude":11.6299088,
+         "longitude":122.4339839
+        },
+        {
+         "name":"PONTEVEDRA PRIMARY CARE FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Tacas, Pontevedra, Capiz",
+         "latitude":11.477554,
+         "longitude":122.8380657
+        },
+        {
+         "name":"PONTEVEDRA RHU\/ MUNICIPALITY OF PONTEVEDRA, NEGROS OCCIDENTAL",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Libertad St., Barangay I (Pob.), Pontevedra, Negros Occidental",
+         "latitude":10.37629,
+         "longitude":122.8659909
+        },
+        {
+         "name":"POTOTAN RURAL HEALTH UNIT BIRTHING CLINIC AND PRIMARY HEALTH CARE FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Malusgod, Pototan, Iloilo",
+         "latitude":10.951313,
+         "longitude":122.6362231
+        },
+        {
+         "name":"PRES. ROXAS RHU BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, President Roxas, Capiz",
+         "latitude":11.4833764,
+         "longitude":122.9972793
+        },
+        {
+         "name":"PULUPANDAN RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Riego St., Barangay Zone 4 (Pob.), Pulupandan, Negros Occidental",
+         "latitude":10.5215127,
+         "longitude":122.8049233
+        },
+        {
+         "name":"RAZ MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Rosario St., Barangay 33 (Pob.), City Of Bacolod (Capital), Negros Occidental",
+         "latitude":10.6618309,
+         "longitude":122.9504232
+        },
+        {
+         "name":"RAZEL'S BIRTHING HOME",
+         "healthResourceType":"Birthing Clinic",
+         "address":"South Homes Subdivision, Sum-Ag, City Of Bacolod (Capital), Negros Occidental",
+         "latitude":10.6076375,
+         "longitude":122.9211719
+        },
+        {
+         "name":"RONANIN\u2019S MIDWIFE CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Lot 2, Blk. 1, Barangay I (Pob.), City Of San Carlos, Negros Occidental",
+         "latitude":17.6431923,
+         "longitude":121.7393534
+        },
+        {
+         "name":"ROSALIE S. EXALA WELL FAMILY MIDWIFE CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"B1 L12 Patricia Homes Subd., Granada, City Of Bacolod (Capital), Negros Occidental",
+         "latitude":10.6713397,
+         "longitude":122.9510716
+        },
+        {
+         "name":"ROXAS CITY HEALTH OFFICE",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Bangbang St., Inzo Arnaldo Village, City Of Roxas (Capital), Capiz",
+         "latitude":11.5850598,
+         "longitude":122.756766
+        },
+        {
+         "name":"RURAL HEALTH UNIT 1 AND BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Naile, Ibajay, Aklan",
+         "latitude":11.7575609,
+         "longitude":122.1802812
+        },
+        {
+         "name":"RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Rizal Street., Barangay 6 (Pob.), Moises Padilla, Negros Occidental",
+         "latitude":10.2726922,
+         "longitude":123.0731276
+        },
+        {
+         "name":"SAN ENRIQUE BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Palabrica St., Poblacion Ilaya, San Enrique, Iloilo",
+         "latitude":11.0719604,
+         "longitude":122.6560289
+        },
+        {
+         "name":"SAN ENRIQUE MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Rizal Street, Poblacion, San Enrique, Negros Occidental",
+         "latitude":10.4238746,
+         "longitude":122.8467076
+        },
+        {
+         "name":"SAN JOSE DE BUENAVISTA PRIMARY CARE FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Rhu-2 Tradetown Street, Funda-Dalipe, San Jose (Capital), Antique",
+         "latitude":10.7573618,
+         "longitude":121.9354006
+        },
+        {
+         "name":"SAN MIGUEL RURAL HEALTH UNIT AND BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Roxas St.,, Bgy. 1 Pob., San Miguel, Iloilo",
+         "latitude":10.7747261,
+         "longitude":122.4764443
+        },
+        {
+         "name":"SAN RAFAEL RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Causing St., Poblacion, San Rafael, Iloilo",
+         "latitude":14.9567108,
+         "longitude":120.9632524
+        },
+        {
+         "name":"SAN RAMON BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Fuentes Drive, Poblacion Xi, City Of Roxas (Capital), Capiz",
+         "latitude":11.5773861,
+         "longitude":122.7547834
+        },
+        {
+         "name":"SAN REMIGIO RHU BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, San Remigio, Antique",
+         "latitude":11.0796556,
+         "longitude":123.9387637
+        },
+        {
+         "name":"SANTA BARBARA RURAL HEALTH UNIT &amp; BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Gen. Martin Delgado St., Barangay Zone Iii (Pob.), Santa Barbara, Iloilo",
+         "latitude":10.8241006,
+         "longitude":122.5347773
+        },
+        {
+         "name":"SAPIAN RURAL HEALTH UNIT AND BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, Sapi-An, Capiz",
+         "latitude":11.5019953,
+         "longitude":122.593828
+        },
+        {
+         "name":"SARA RURAL HEALTH UNIT BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"D.V. Salcedo St., Poblacion Market, Sara, Iloilo",
+         "latitude":11.2559755,
+         "longitude":123.0127645
+        },
+        {
+         "name":"SIBALOM RURAL HEALTH UNIT",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Fenete Street, District Ii (Pob.), Sibalom, Antique",
+         "latitude":10.787245,
+         "longitude":122.0186263
+        },
+        {
+         "name":"SIGMA RURAL HEALTH UNIT AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Murguia St., Poblacion Norte, Sigma, Capiz",
+         "latitude":11.4231794,
+         "longitude":122.6651831
+        },
+        {
+         "name":"SILAY CITY HEALTH OFFICE MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Dr. Jose Locsin St., Barangay V (Pob.), City Of Silay, Negros Occidental",
+         "latitude":10.7813197,
+         "longitude":122.9916478
+        },
+        {
+         "name":"SIPALAY BIRTHING UNIT",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Alvares Street, Barangay 2 (Pob.), City Of Sipalay, Negros Occidental",
+         "latitude":9.7449961,
+         "longitude":122.4028353
+        },
+        {
+         "name":"SOUTH NEGROS LYING-IN &amp; BIRTHING HOME",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Purok 2, Dancalan, Ilog, Negros Occidental",
+         "latitude":9.9837,
+         "longitude":122.741203
+        },
+        {
+         "name":"SRMJ LYING \u2013 IN AND BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Purok Barrack'S, Camingawan, City Of Kabankalan, Negros Occidental",
+         "latitude":9.8419461,
+         "longitude":122.8874067
+        },
+        {
+         "name":"ST. CATHERINE BIRTHING HOME",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Banica, City Of Roxas (Capital), Capiz",
+         "latitude":11.5811354,
+         "longitude":122.77177
+        },
+        {
+         "name":"ST. LUKE DE BAROTAC VIEJO BIRTHING HOME, INC.",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Carrida Street, San Lucas, Barotac Viejo, Iloilo",
+         "latitude":11.0625316,
+         "longitude":122.8761309
+        },
+        {
+         "name":"ST. MARGARET BIRTHING HOME",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Tacas, Pontevedra, Capiz",
+         "latitude":11.477554,
+         "longitude":122.8380657
+        },
+        {
+         "name":"ST. THERESE BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Yap Bldg., Cabahug St., Barangay 2 Pob., City Of Cadiz, Negros Occidental",
+         "latitude":10.9573635,
+         "longitude":123.308429
+        },
+        {
+         "name":"TA-AY MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Poblacion, President Roxas, Capiz",
+         "latitude":11.4833764,
+         "longitude":122.9972793
+        },
+        {
+         "name":"TALISAY CITY HEALTH BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Bonifacio St., Zone 4-A (Pob.), City Of Talisay, Negros Occidental",
+         "latitude":10.7381445,
+         "longitude":122.9671818
+        },
+        {
+         "name":"TAPAZ MUNICIPAL HEALTH OFFICE AND BIRTHING FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Roosevelt St., Poblacion, Tapaz, Capiz",
+         "latitude":11.260858,
+         "longitude":122.5368428
+        },
+        {
+         "name":"THE LOIDA CIUDAD-STERNER FAMILY FOUNDATION, INC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Pani-An, Balasan, Iloilo",
+         "latitude":11.4581824,
+         "longitude":123.1084372
+        },
+        {
+         "name":"TIBIAO MUNICIPAL HEALTH OFFICE &amp; BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"National Highway, Poblacion, Tibiao, Antique",
+         "latitude":11.2953463,
+         "longitude":122.0585226
+        },
+        {
+         "name":"TOBIAS FORNIER HEALTH OFFICE AND BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Rizal Street, Poblacion Norte, Tobias Fornier, Antique",
+         "latitude":10.522115,
+         "longitude":121.9447881
+        },
+        {
+         "name":"TUBUNGAN PRIMARY CARE FACILITY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"San Antonio Street, Teniente Benito, Tubungan, Iloilo",
+         "latitude":10.7665575,
+         "longitude":122.3249236
+        },
+        {
+         "name":"UPLAND LYING IN AND BIRTHING CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Purok Progreso, Tapi, City Of Kabankalan, Negros Occidental",
+         "latitude":9.8786149,
+         "longitude":122.7619906
+        },
+        {
+         "name":"VALDERRAMA MUNICIPAL HEALTH  MATERNITY &amp; DIAGNOSTIC CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Legaspi St., Ubos (Pob.), Valderrama, Antique",
+         "latitude":11.0111117,
+         "longitude":122.1320237
+        },
+        {
+         "name":"VALLADOLID RURAL HEALTH UNIT MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Zarandin Street, Poblacion, Valladolid, Negros Occidental",
+         "latitude":10.4622545,
+         "longitude":122.8230641
+        },
+        {
+         "name":"VICTORIAS CITY HEALTH OFFICE MATERNITY &amp; LYING-IN CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Montinola St., Barangay Iv (Pob.), City Of Victorias, Negros Occidental",
+         "latitude":10.9008814,
+         "longitude":123.0723728
+        },
+        {
+         "name":"VLM LYING-IN &amp; BIRTH CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Colmenares St., Robles (Pob.), La Castellana, Negros Occidental",
+         "latitude":10.3235249,
+         "longitude":123.0203915
+        },
+        {
+         "name":"WELL CARED MATERNITY CLINIC",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Purok 5, Magbato, Lambunao, Iloilo",
+         "latitude":11.0338813,
+         "longitude":122.4707839
+        },
+        {
+         "name":"WELL FAMILY MIDWIFE CLINIC- FELY TOLEDO\/TALISAY",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Zone 5, Concepcion, City Of Talisay, Negros Occidental",
+         "latitude":10.6843041,
+         "longitude":123.0790981
+        },
+        {
+         "name":"ZARRAGA RURAL HEALTH AND BIRTHING CENTER",
+         "healthResourceType":"Birthing Clinic",
+         "address":"Zamora St., Ilaya Poblacion, Zarraga, Iloilo",
+         "latitude":10.8282439,
+         "longitude":122.6065484
+        }
+    ],
     "DOTS Providing Facility": [
         {
             "name": "ADVENTIST MEDICAL CENTER-BACOLOD - DOTS",
