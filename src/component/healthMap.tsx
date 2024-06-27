@@ -41,7 +41,7 @@ export default function HealthMap() {
 	const [markers, setMarkers] = useState<{ name: string; healthResourceType: string; address: string; latitude: number; longitude: number}[]>([])
 
 	// this the zoom of the map. If the map did not load it will automatically zoom out to show the whole region
-	const zoomLoad = (currentLocation: google.maps.LatLng | google.maps.LatLngLiteral) => currentLocation.lat === 11.0050 && currentLocation.lng === 122.5373 ? 9 : 16.5;
+	const zoomLoad = (currentLocation: google.maps.LatLng | google.maps.LatLngLiteral) => currentLocation.lat === 11.0050 && currentLocation.lng === 122.5373 ? 9 : 15.5;
 
 	// conditionals in changing the color relative to the radius
 	const reachTextChange = (radius: number) => radius <= radiusNum ? 'Walkable' : (radius > radiusNum && radius <= 1800) ? 'Commute' : 'Too Far';
