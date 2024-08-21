@@ -29,15 +29,16 @@ import DropdownList from 'react-widgets/DropdownList';
 const healthFacilities = Object.values(healthFacilitiesType[0]).flat()
 
 export default function HealthMap() {
-	// Initializing the map and the current locaiton of the user
+	// Initializing the map and the current location of the user
     const [currentLocation, setCurrentLocation] = useState<google.maps.LatLngLiteral | google.maps.LatLng>({ lat: 11.0050, lng: 122.5373 });
     const [mapCenter, setMapCenter] = useState<google.maps.LatLngLiteral>();
     const [loadingState, setLoadingState] = useState(true);
 	const [userLocation, setUserLocation] = useState<google.maps.LatLngLiteral | google.maps.LatLng>({ lat: 11.0050, lng: 122.5373 })
 
-	var radiusNum = 500;	
+	// The radius (circle) for proximity buffer, increase or decrease to liking
+	var radiusNum = 1000;	
 	const [radius, setRadius] = useState(radiusNum);
-	var radiusKM = (radius+200)/1000 // convert to KM
+	var radiusKM = radius/1000 // convert to KM
 	const [markers, setMarkers] = useState<{ name: string; healthResourceType: string; address: string; latitude: number; longitude: number}[]>([])
 
 	// this the zoom of the map. If the map did not load it will automatically zoom out to show the whole region
