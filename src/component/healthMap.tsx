@@ -41,12 +41,24 @@ export default function HealthMap() {
 	const [markers, setMarkers] = useState<{ name: string; healthResourceType: string; address: string; latitude: number; longitude: number}[]>([])
 
 	// this the zoom of the map. If the map did not load it will automatically zoom out to show the whole region
-	const zoomLoad = (currentLocation: google.maps.LatLng | google.maps.LatLngLiteral) => currentLocation.lat === 11.0050 && currentLocation.lng === 122.5373 ? 9 : 15.5;
+	const zoomLoad = (currentLocation: google.maps.LatLng | google.maps.LatLngLiteral) => currentLocation.lat === 11.0050 && currentLocation.lng === 122.5373 ? 9 : 14.5;
 
 	// conditionals in changing the color relative to the radius
-	const reachTextChange = (radius: number) => radius <= radiusNum ? 'Walkable' : (radius > radiusNum && radius <= 4000) ? 'Commute' : 'Too Far';
-	const getFillColor = (radius: number) => radius <= radiusNum ? '#3b82f6' : (radius > radiusNum && radius <= 4000) ? '#ffd55c' : '#f44336';
-	const getStrokeColor = (radius: number) => radius <= radiusNum ? '#0c4cb3' : (radius > radiusNum && radius <= 4000) ? '#4c3f1b' : '#300d0a';
+	const reachTextChange = (radius: number) => 
+		radius <= radiusNum ? 'Walkable' : 
+		radius > radiusNum && radius <= 10000 ? 'Commute' : 
+		'Too Far';
+	  
+	  const getFillColor = (radius: number) => 
+		radius <= radiusNum ? '#3b82f6' : 
+		radius > radiusNum && radius <= 10000 ? '#ffd55c' : 
+		'#f44336';
+	  
+	  const getStrokeColor = (radius: number) => 
+		radius <= radiusNum ? '#0c4cb3' : 
+		radius > radiusNum && radius <= 10000 ? '#4c3f1b' : 
+		'#300d0a';
+	  
 
 	const map = useMap()
 
@@ -77,7 +89,17 @@ export default function HealthMap() {
 
 	const geometryLibrary = useMapsLibrary("geometry");
 	const [geometryLib] = useState<google.maps.GeometryLibrary['spherical'] | null>(null);
+
+	const [facilityCount, setFacilityCount] = useState(0); // Store the facility count
 	
+	const [selectedHealthResourceType, setSelectedHealthResourceType] = useState('All');
+
+	const healthResourceTypes = healthFacilitiesType.length > 0 ? Object.keys(healthFacilitiesType[0]) : [];
+
+	const handleHealthResourceTypeChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+		setSelectedHealthResourceType(event.target.value);
+	};
+
 	// Markers within the access radius
 	useEffect(() => {
 		if (!geometryLibrary) return;
@@ -89,9 +111,15 @@ export default function HealthMap() {
 			;
 		return distance <= radius;
 		});
-		setMarkers(markersWithinRadius);
-	}, [geometryLib, currentLocation, radius]);
-		
+		// Filter based on selected facility type
+		const filteredFacilities = selectedHealthResourceType === 'All' 
+        ? markersWithinRadius 
+        : markersWithinRadius.filter((facility) => facility.healthResourceType === selectedHealthResourceType);
+
+		setMarkers(filteredFacilities);
+		setFacilityCount(filteredFacilities.length); // Update the count
+	}, [geometryLibrary, currentLocation, radius, selectedHealthResourceType, healthFacilities]);
+	
 	useEffect(() => {
 		getCurrentLocation()
 	}, []);
@@ -126,7 +154,7 @@ export default function HealthMap() {
 		setSelectedCommunity(community);
 		if (map) {
 			map.panTo({ lat: community.latitude, lng: community.longitude });
-			map.setZoom(15)
+			map.setZoom(14.5)
 		}
 	  };
 
@@ -136,13 +164,6 @@ export default function HealthMap() {
 		  	setMapCenter({ lat: selectedCommunity.latitude, lng: selectedCommunity.longitude });
 		}
 	}, [selectedCommunity]);
-
-	const [selectedHealthResourceType, setSelectedHealthResourceType] = useState('All');
-	const healthResourceTypes = Object.keys(healthFacilitiesType[0]);
-
-	const handleHealthResourceTypeChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-		setSelectedHealthResourceType(event.target.value);
-	};
 
 	const filteredMarkers = useMemo(() => {
 		if (selectedHealthResourceType === 'All') {
@@ -228,8 +249,12 @@ export default function HealthMap() {
 				</div>
 			</div>
 
-
 			<h3>Health Facilities Type</h3>
+			<div className="dist-time">
+				<div className="label">Facilities in Range</div>
+				<div className="value">{facilityCount}</div>
+			</div>
+
 			<select className='dropdown-facilities' value={selectedHealthResourceType} onChange={handleHealthResourceTypeChange}>
 				<option value="All">All Health Facilities</option>
 				{healthResourceTypes.map((type) => (
