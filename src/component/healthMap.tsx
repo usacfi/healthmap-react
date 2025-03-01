@@ -7,7 +7,6 @@ import {
 	useMapsLibrary,
 	useAdvancedMarkerRef,
 	useMap,
-	Pin
 } from '@vis.gl/react-google-maps';
 import { useState, useMemo, useEffect } from "react";
 import {Spinner, Alert} from 'react-bootstrap';
@@ -36,7 +35,7 @@ export default function HealthMap() {
 	const [userLocation, setUserLocation] = useState<google.maps.LatLngLiteral | google.maps.LatLng>({ lat: 11.0050, lng: 122.5373 })
 
 	// The radius (circle) for proximity buffer, increase or decrease to liking
-	var radiusNum = 1000;	
+	var radiusNum = 2000;	
 	const [radius, setRadius] = useState(radiusNum);
 	var radiusKM = radius/1000 // convert to KM
 	const [markers, setMarkers] = useState<{ name: string; healthResourceType: string; address: string; latitude: number; longitude: number}[]>([])
@@ -45,18 +44,20 @@ export default function HealthMap() {
 	const zoomLoad = (currentLocation: google.maps.LatLng | google.maps.LatLngLiteral) => currentLocation.lat === 11.0050 && currentLocation.lng === 122.5373 ? 9 : 15.5;
 
 	// conditionals in changing the color relative to the radius
-	const reachTextChange = (radius: number) => radius <= radiusNum ? 'Walkable' : (radius > radiusNum && radius <= 1800) ? 'Commute' : 'Too Far';
-	const getFillColor = (radius: number) => radius <= radiusNum ? '#3b82f6' : (radius > radiusNum && radius <= 1800) ? '#ffd55c' : '#f44336';
-	const getStrokeColor = (radius: number) => radius <= radiusNum ? '#0c4cb3' : (radius > radiusNum && radius <= 1800) ? '#4c3f1b' : '#300d0a';
+	const reachTextChange = (radius: number) => radius <= radiusNum ? 'Walkable' : (radius > radiusNum && radius <= 4000) ? 'Commute' : 'Too Far';
+	const getFillColor = (radius: number) => radius <= radiusNum ? '#3b82f6' : (radius > radiusNum && radius <= 4000) ? '#ffd55c' : '#f44336';
+	const getStrokeColor = (radius: number) => radius <= radiusNum ? '#0c4cb3' : (radius > radiusNum && radius <= 4000) ? '#4c3f1b' : '#300d0a';
 
 	const map = useMap()
 
+	// Initializing the where the Map would zoom and the coordiantes of the current location
 	const changeCenter = (newCenter: google.maps.LatLng | null) => {
 		if (!newCenter) return;
 		setMapCenter({ lat: newCenter.lat(), lng: newCenter.lng() });
 		setCurrentLocation({lng: newCenter.lng(), lat: newCenter.lat()});
 	};
 
+	
     const getCurrentLocation = () => {
         navigator.geolocation.getCurrentPosition(
         (position) => {

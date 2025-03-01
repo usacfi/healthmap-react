@@ -17,14 +17,20 @@ export const communityData: Community[] = [
     {
         "name":"Pantad Ati",
         "address":"Tobias Fornier, Antique",
-        "latitude": 10.4994417,
-        "longitude": 121.9700618
+        "latitude": 10.5165,
+        "longitude": 121.9995
     },
     {
-        "name":"CAARD Partner Communities",
+        "name":"CAARD Partner Communities - Sto. Tomas",
         "address":"Passi City, Iloilo",
-        "latitude": 11.1687967,
-        "longitude": 122.650351
+        "latitude": 11.203971,
+        "longitude": 122.644725
+    },
+    {
+        "name":"CAARD Partner Communities - Salngan",
+        "address":"Passi City, Iloilo",
+        "latitude": 11.190288,
+        "longitude": 122.726746
     },
     {
         "name":"Yolanda Pabahay",
@@ -35,8 +41,8 @@ export const communityData: Community[] = [
     {
         "name":"Kati-Kati Ati",
         "address":"Jordan, Guimaras",
-        "latitude": 10.5959757,
-        "longitude": 122.5877782
+        "latitude": 10.580377,
+        "longitude": 122.592247
     },
     {
         "name":"Camang-camang Ati Cultural Community",
@@ -63,10 +69,16 @@ export const communityData: Community[] = [
         "longitude": 122.8761309
     },
     {
-        "name":"PCATO Ati",
+        "name":"Caridad - Hamtic Community",
         "address":"Hamtic, Antique",
-        "latitude": 10.6518851,
-        "longitude": 122.0155491
+        "latitude": 10.691799,
+        "longitude": 121.989919
+    },
+    {
+        "name":"Poblacion 4 - Hamtic Community",
+        "address":"Hamtic, Antique",
+        "latitude": 10.701997,
+        "longitude": 121.985804
     },
     {
         "name":"NAMIAS Ati - Anilao",
