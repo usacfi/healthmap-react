@@ -2,6 +2,7 @@ import React from 'react';
 import { 
 	Map,
 	AdvancedMarker,
+	Pin,
 	CollisionBehavior,
 	InfoWindow,
 	useMapsLibrary,
@@ -375,7 +376,7 @@ export default function HealthMap() {
 									onClick={() => handleMarkerClick(marker)}
 									title={marker.name}
 								>
-									<div
+									{/* <div
 										style={{
 										width: 12,
 										height: 12,
@@ -387,7 +388,8 @@ export default function HealthMap() {
 										borderRadius: '50%',
 										transform: 'translate(-50%, -50%)',
 										}}
-									/>
+									/> */}
+									<Pin background={ getMarkerColor(marker.healthResourceType) } glyphColor={'#000'} borderColor={'#000'} />
 								</AdvancedMarker>
 
 								{
