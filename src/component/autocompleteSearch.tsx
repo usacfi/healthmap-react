@@ -108,8 +108,6 @@ export const AutocompleteSearch = ({onPlaceSelect, selectedPlace, currentLocatio
 
 	return (
 		<>
-			<col>
-			</col>
 			{clearButtonVisible && (
 				<button className="clear-button" onClick={handleClearClick}>
 				Clear ❌
